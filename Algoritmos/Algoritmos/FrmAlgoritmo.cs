@@ -73,17 +73,17 @@ namespace Algoritmos
 
         private void rellenoPorSemillaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //AbrirFormulario<FrmRellenoPorSemilla>();
+            AbrirFormulario<FrmRellenoPorSemilla>();
         }
 
         private void rellenoPorPilaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //AbrirFormulario<FrmRellenoPorPila>();
+            AbrirFormulario<FrmRellenoPorPila>();
         }
 
         private void rellenoScanlineToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //AbrirFormulario<FrmRellenoScanline>();
+            AbrirFormulario<FrmRellenoScanline>();
         }
     }
 }

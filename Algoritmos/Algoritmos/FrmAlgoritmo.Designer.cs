@@ -95,18 +95,21 @@
             puntoMedioDeCirculoToolStripMenuItem.Name = "puntoMedioDeCirculoToolStripMenuItem";
             puntoMedioDeCirculoToolStripMenuItem.Size = new Size(248, 26);
             puntoMedioDeCirculoToolStripMenuItem.Text = "Punto Medio de Circulo";
-            // 
+            puntoMedioDeCirculoToolStripMenuItem.Click += puntoMedioDeCirculoToolStripMenuItem_Click;
+            //
             // parametricoDeCirculoToolStripMenuItem
-            // 
+            //
             parametricoDeCirculoToolStripMenuItem.Name = "parametricoDeCirculoToolStripMenuItem";
             parametricoDeCirculoToolStripMenuItem.Size = new Size(248, 26);
             parametricoDeCirculoToolStripMenuItem.Text = "Parametrico de Circulo";
-            // 
+            parametricoDeCirculoToolStripMenuItem.Click += parametricoDeCirculoToolStripMenuItem_Click;
+            //
             // polarDeCirculoToolStripMenuItem
-            // 
+            //
             polarDeCirculoToolStripMenuItem.Name = "polarDeCirculoToolStripMenuItem";
             polarDeCirculoToolStripMenuItem.Size = new Size(248, 26);
             polarDeCirculoToolStripMenuItem.Text = "Polar de Circulo";
+            polarDeCirculoToolStripMenuItem.Click += polarDeCirculoToolStripMenuItem_Click;
             // 
             // rellenoToolStripMenuItem
             // 
@@ -120,18 +123,21 @@
             rellenoPorSemillaToolStripMenuItem.Name = "rellenoPorSemillaToolStripMenuItem";
             rellenoPorSemillaToolStripMenuItem.Size = new Size(224, 26);
             rellenoPorSemillaToolStripMenuItem.Text = "Relleno por Semilla";
-            // 
+            rellenoPorSemillaToolStripMenuItem.Click += rellenoPorSemillaToolStripMenuItem_Click;
+            //
             // rellenoPorPilaToolStripMenuItem
-            // 
+            //
             rellenoPorPilaToolStripMenuItem.Name = "rellenoPorPilaToolStripMenuItem";
             rellenoPorPilaToolStripMenuItem.Size = new Size(224, 26);
             rellenoPorPilaToolStripMenuItem.Text = "Relleno por Pila";
-            // 
+            rellenoPorPilaToolStripMenuItem.Click += rellenoPorPilaToolStripMenuItem_Click;
+            //
             // rellenoScanlineToolStripMenuItem
-            // 
+            //
             rellenoScanlineToolStripMenuItem.Name = "rellenoScanlineToolStripMenuItem";
             rellenoScanlineToolStripMenuItem.Size = new Size(224, 26);
             rellenoScanlineToolStripMenuItem.Text = "Relleno Scanline";
+            rellenoScanlineToolStripMenuItem.Click += rellenoScanlineToolStripMenuItem_Click;
             // 
             // FrmAlgoritmo
             // 
