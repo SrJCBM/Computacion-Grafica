@@ -1,0 +1,100 @@
+﻿using System;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Windows.Forms;
+
+namespace ExamenBlacioJulio
+{
+    public partial class FrmGema : Form
+    {
+        private float ladoBase;
+        private float escala = 1f;
+
+        public FrmGema()
+        {
+            InitializeComponent();
+        }
+
+        private void btnCalcular_Click(object sender, EventArgs e)
+        {
+            if (!float.TryParse(txtLado.Text, out ladoBase) || ladoBase <= 0)
+            {
+                MessageBox.Show("Ingresa un tamaño válido mayor que 0.");
+                return;
+            }
+
+            lblDescripcion.Text = $"Lado del decágono: {ladoBase:0.##}";
+            pnlCanvas.Invalidate();
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtLado.Clear();
+            lblDescripcion.Text = "Lado del decágono:";
+            ladoBase = 0;
+            escala = 1f;
+            trackBarEscala.Value = 10;
+            lblEscalaValor.Text = "1.0x";
+            pnlCanvas.Invalidate();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void trackBarEscala_Scroll(object sender, EventArgs e)
+        {
+            escala = Math.Max(0.2f, trackBarEscala.Value / 10f);
+            lblEscalaValor.Text = $"{escala:0.0}x";
+            pnlCanvas.Invalidate();
+        }
+
+        private void pnlCanvas_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            g.Clear(Color.White);
+
+            if (ladoBase <= 0)
+            {
+                using (var font = new Font("Segoe UI", 11f, FontStyle.Regular))
+                using (var brush = new SolidBrush(Color.Gray))
+                {
+                    g.DrawString("Ingresa el lado y presiona Calcular.", font, brush, 15, 15);
+                }
+                return;
+            }
+
+            PointF center = new PointF(pnlCanvas.Width / 2f, pnlCanvas.Height / 2f);
+            float outerRadius = Math.Min(pnlCanvas.Width, pnlCanvas.Height) * 0.22f * escala;
+            float innerRadius = outerRadius * 0.58f;
+
+            PointF[] decagon = PolygonGeometry.CreateRegularPolygon(center, outerRadius, 10, -90f);
+            PointF[] flower = PolygonGeometry.CreateStarPolygon(center, outerRadius * 0.82f, innerRadius, 10, -90f);
+
+            using (Pen outerPen = new Pen(Color.Black, 2f))
+            using (Pen flowerPen = new Pen(Color.Blue, 2f))
+            using (Brush fill = new SolidBrush(Color.White))
+            {
+                g.FillPolygon(fill, decagon);
+                g.DrawPolygon(outerPen, decagon);
+                g.DrawPolygon(flowerPen, flower);
+
+                for (int i = 0; i < 10; i++)
+                {
+                    PointF[] petal = new PointF[]
+                    {
+                        center,
+                        flower[i * 2],
+                        flower[(i * 2 + 1) % flower.Length],
+                        flower[(i * 2 + 2) % flower.Length],
+                        decagon[(i + 1) % decagon.Length]
+                    };
+
+                    g.DrawPolygon(flowerPen, petal);
+                }
+            }
+        }
+    }
+}

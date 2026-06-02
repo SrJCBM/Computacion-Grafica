@@ -1,0 +1,121 @@
+﻿using System;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Windows.Forms;
+
+namespace ExamenBlacioJulio
+{
+    public partial class FrmGema : Form
+    {
+        private float ladoBase;
+        private float escala = 1f;
+
+        public FrmGema()
+        {
+            InitializeComponent();
+            trackBar1.Minimum = 2;
+            trackBar1.Maximum = 30;
+            trackBar1.Value = 10;
+            trackBar1.TickFrequency = 2;
+            lblEscalaValor.Text = "1.0x";
+        }
+
+        private void BtnCalcular_Click(object sender, EventArgs e)
+        {
+            if (!float.TryParse(txtAncho.Text, out ladoBase) || ladoBase <= 0)
+            {
+                MessageBox.Show("Ingresa un tamaño válido mayor que 0.");
+                return;
+            }
+
+            lblDescripcion.Text = $"Lado del decágono: {ladoBase:0.##}";
+            pnlCanvas.Invalidate();
+        }
+
+        private void BtnResetear_Click(object sender, EventArgs e)
+        {
+            txtAncho.Clear();
+            lblDescripcion.Text = "Lado del decágono:";
+            ladoBase = 0;
+            escala = 1f;
+            trackBar1.Value = 10;
+            lblEscalaValor.Text = "1.0x";
+            pnlCanvas.Invalidate();
+        }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            escala = trackBar1.Value / 10f;
+            lblEscalaValor.Text = $"{escala:0.0}x";
+            pnlCanvas.Invalidate();
+        }
+
+        private void pnlCanvas_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            g.Clear(Color.White);
+
+            if (ladoBase <= 0)
+            {
+                using (Font f = new Font("Segoe UI", 11f, FontStyle.Regular))
+                using (Brush b = new SolidBrush(Color.Gray))
+                {
+                    g.DrawString("Ingresa el lado y presiona Calcular.", f, b, 15, 15);
+                }
+                return;
+            }
+
+            float sidePx = ladoBase * 10.5f * escala;
+            float outerRadiusBySide = sidePx / (2f * (float)Math.Sin(Math.PI / 10f));
+            float outerRadius = Math.Min(outerRadiusBySide, Math.Min(pnlCanvas.Width, pnlCanvas.Height) * 0.31f);
+
+            PointF c = new PointF(pnlCanvas.Width / 2f, pnlCanvas.Height / 2f);
+            PointF[] decagon = PolygonGeometry.CreateRegularPolygon(c, outerRadius, 10, -90f);
+
+            float rTip = outerRadius * 0.80f;
+            float rShoulder = outerRadius * 0.60f;
+            float rInner = outerRadius * 0.34f;
+            float rCore = outerRadius * 0.10f;
+
+            using (Pen penOut = new Pen(Color.Black, 2f))
+            using (Pen penBlue = new Pen(Color.Blue, 2f))
+            {
+                g.DrawPolygon(penOut, decagon);
+
+                for (int i = 0; i < 10; i++)
+                {
+                    float a0 = -90f + (i * 36f);
+                    float aMid = a0 + 18f;
+                    float a2 = a0 + 36f;
+
+                    PointF v0 = PolygonGeometry.PointOnCircle(c, outerRadius, a0);
+                    PointF v2 = PolygonGeometry.PointOnCircle(c, outerRadius, a2);
+
+                    PointF t = PolygonGeometry.PointOnCircle(c, rTip, aMid);
+                    PointF sL = PolygonGeometry.PointOnCircle(c, rShoulder, a0 + 8f);
+                    PointF sR = PolygonGeometry.PointOnCircle(c, rShoulder, a2 - 8f);
+                    PointF inn = PolygonGeometry.PointOnCircle(c, rInner, aMid);
+                    PointF core = PolygonGeometry.PointOnCircle(c, rCore, aMid);
+
+                    g.DrawLine(penBlue, v0, t);
+                    g.DrawLine(penBlue, t, sL);
+                    g.DrawLine(penBlue, sL, inn);
+                    g.DrawLine(penBlue, inn, core);
+                    g.DrawLine(penBlue, core, inn);
+                    g.DrawLine(penBlue, inn, sR);
+                    g.DrawLine(penBlue, sR, t);
+                    g.DrawLine(penBlue, t, v2);
+                }
+
+                PointF[] innerRing = PolygonGeometry.CreateRegularPolygon(c, rInner, 10, -72f);
+                g.DrawPolygon(penBlue, innerRing);
+            }
+        }
+    }
+}

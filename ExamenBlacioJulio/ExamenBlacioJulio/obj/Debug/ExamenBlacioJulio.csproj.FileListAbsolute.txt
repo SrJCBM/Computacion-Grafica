@@ -1,0 +1,12 @@
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\ExamenBlacioJulio\ExamenBlacioJulio\obj\Debug\ExamenBlacioJulio.csproj.AssemblyReference.cache
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\ExamenBlacioJulio\ExamenBlacioJulio\obj\Debug\ExamenBlacioJulio.FrmGema.resources
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\ExamenBlacioJulio\ExamenBlacioJulio\obj\Debug\ExamenBlacioJulio.FrmHome.resources
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\ExamenBlacioJulio\ExamenBlacioJulio\obj\Debug\ExamenBlacioJulio.Properties.Resources.resources
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\ExamenBlacioJulio\ExamenBlacioJulio\obj\Debug\ExamenBlacioJulio.csproj.GenerateResource.cache
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\ExamenBlacioJulio\ExamenBlacioJulio\obj\Debug\ExamenBlacioJulio.csproj.CoreCompileInputs.cache
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\ExamenBlacioJulio\ExamenBlacioJulio\bin\Debug\ExamenBlacioJulio.exe.config
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\ExamenBlacioJulio\ExamenBlacioJulio\bin\Debug\ExamenBlacioJulio.exe
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\ExamenBlacioJulio\ExamenBlacioJulio\bin\Debug\ExamenBlacioJulio.pdb
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\ExamenBlacioJulio\ExamenBlacioJulio\obj\Debug\ExamenBlacioJulio.FrmMargarita.resources
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\ExamenBlacioJulio\ExamenBlacioJulio\obj\Debug\ExamenBlacioJulio.exe
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\ExamenBlacioJulio\ExamenBlacioJulio\obj\Debug\ExamenBlacioJulio.pdb

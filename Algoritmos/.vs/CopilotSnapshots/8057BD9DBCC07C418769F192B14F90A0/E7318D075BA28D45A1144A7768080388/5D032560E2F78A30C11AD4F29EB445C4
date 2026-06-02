@@ -1,0 +1,290 @@
+﻿namespace GeometriaComputacional
+{
+    partial class FrmDDA
+    {
+        /// <summary>
+        /// Variable del diseñador necesaria.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Limpiar los recursos que se estén usando.
+        /// </summary>
+        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Código generado por el Diseñador de Windows Forms
+
+        /// <summary>
+        /// Método necesario para admitir el Diseñador. No se puede modificar
+        /// el contenido de este método con el editor de código.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            lblDistancia = new Label();
+            groupBox1 = new GroupBox();
+            lblResultadoPendiente = new Label();
+            lblResultadoDeltaY = new Label();
+            lblResultadoDeltaX = new Label();
+            lblDeltaY = new Label();
+            lblDeltaX = new Label();
+            txtY2 = new TextBox();
+            txtX2 = new TextBox();
+            txtY1 = new TextBox();
+            txtX1 = new TextBox();
+            lblPunto2 = new Label();
+            lblPunto1 = new Label();
+            lblDecoracion1 = new Label();
+            lblDecoracion2 = new Label();
+            btnLimpiar = new Button();
+            btnCalcularDistancia = new Button();
+            pnlContenedor = new Panel();
+            lblPropietario = new Label();
+            groupBox1.SuspendLayout();
+            SuspendLayout();
+            // 
+            // lblDistancia
+            // 
+            lblDistancia.AutoSize = true;
+            lblDistancia.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDistancia.Location = new Point(590, 44);
+            lblDistancia.Name = "lblDistancia";
+            lblDistancia.Size = new Size(107, 16);
+            lblDistancia.TabIndex = 0;
+            lblDistancia.Text = "Pendiente (m):";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(lblResultadoPendiente);
+            groupBox1.Controls.Add(lblResultadoDeltaY);
+            groupBox1.Controls.Add(lblResultadoDeltaX);
+            groupBox1.Controls.Add(lblDeltaY);
+            groupBox1.Controls.Add(lblDeltaX);
+            groupBox1.Controls.Add(txtY2);
+            groupBox1.Controls.Add(txtX2);
+            groupBox1.Controls.Add(txtY1);
+            groupBox1.Controls.Add(txtX1);
+            groupBox1.Controls.Add(lblPunto2);
+            groupBox1.Controls.Add(lblPunto1);
+            groupBox1.Controls.Add(lblDistancia);
+            groupBox1.Controls.Add(lblDecoracion1);
+            groupBox1.Controls.Add(lblDecoracion2);
+            groupBox1.Location = new Point(12, 15);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(997, 131);
+            groupBox1.TabIndex = 1;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Resultados del Calculo";
+            // 
+            // lblResultadoPendiente
+            // 
+            lblResultadoPendiente.AutoSize = true;
+            lblResultadoPendiente.Location = new Point(657, 91);
+            lblResultadoPendiente.Name = "lblResultadoPendiente";
+            lblResultadoPendiente.Size = new Size(0, 20);
+            lblResultadoPendiente.TabIndex = 11;
+            // 
+            // lblResultadoDeltaY
+            // 
+            lblResultadoDeltaY.AutoSize = true;
+            lblResultadoDeltaY.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblResultadoDeltaY.Location = new Point(487, 92);
+            lblResultadoDeltaY.Name = "lblResultadoDeltaY";
+            lblResultadoDeltaY.Size = new Size(0, 16);
+            lblResultadoDeltaY.TabIndex = 10;
+            // 
+            // lblResultadoDeltaX
+            // 
+            lblResultadoDeltaX.AutoSize = true;
+            lblResultadoDeltaX.Location = new Point(388, 94);
+            lblResultadoDeltaX.Name = "lblResultadoDeltaX";
+            lblResultadoDeltaX.Size = new Size(0, 20);
+            lblResultadoDeltaX.TabIndex = 9;
+            // 
+            // lblDeltaY
+            // 
+            lblDeltaY.AutoSize = true;
+            lblDeltaY.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDeltaY.Location = new Point(484, 44);
+            lblDeltaY.Name = "lblDeltaY";
+            lblDeltaY.Size = new Size(31, 16);
+            lblDeltaY.TabIndex = 8;
+            lblDeltaY.Text = "Δ Y";
+            // 
+            // lblDeltaX
+            // 
+            lblDeltaX.AutoSize = true;
+            lblDeltaX.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDeltaX.Location = new Point(385, 44);
+            lblDeltaX.Name = "lblDeltaX";
+            lblDeltaX.Size = new Size(30, 16);
+            lblDeltaX.TabIndex = 7;
+            lblDeltaX.Text = "Δ X";
+            // 
+            // txtY2
+            // 
+            txtY2.Location = new Point(271, 91);
+            txtY2.Margin = new Padding(3, 4, 3, 4);
+            txtY2.Name = "txtY2";
+            txtY2.Size = new Size(47, 27);
+            txtY2.TabIndex = 4;
+            // 
+            // txtX2
+            // 
+            txtX2.Location = new Point(218, 91);
+            txtX2.Margin = new Padding(3, 4, 3, 4);
+            txtX2.Name = "txtX2";
+            txtX2.Size = new Size(47, 27);
+            txtX2.TabIndex = 4;
+            // 
+            // txtY1
+            // 
+            txtY1.Location = new Point(91, 91);
+            txtY1.Margin = new Padding(3, 4, 3, 4);
+            txtY1.Name = "txtY1";
+            txtY1.Size = new Size(45, 27);
+            txtY1.TabIndex = 4;
+            // 
+            // txtX1
+            // 
+            txtX1.Location = new Point(44, 91);
+            txtX1.Margin = new Padding(3, 4, 3, 4);
+            txtX1.Name = "txtX1";
+            txtX1.Size = new Size(41, 27);
+            txtX1.TabIndex = 3;
+            // 
+            // lblPunto2
+            // 
+            lblPunto2.AutoSize = true;
+            lblPunto2.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPunto2.Location = new Point(223, 44);
+            lblPunto2.Name = "lblPunto2";
+            lblPunto2.Size = new Size(95, 16);
+            lblPunto2.TabIndex = 2;
+            lblPunto2.Text = "Punto 2 (X,Y)";
+            // 
+            // lblPunto1
+            // 
+            lblPunto1.AutoSize = true;
+            lblPunto1.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPunto1.Location = new Point(41, 44);
+            lblPunto1.Name = "lblPunto1";
+            lblPunto1.Size = new Size(95, 16);
+            lblPunto1.TabIndex = 1;
+            lblPunto1.Text = "Punto 1 (X,Y)";
+            // 
+            // lblDecoracion1
+            // 
+            lblDecoracion1.AutoSize = true;
+            lblDecoracion1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDecoracion1.Location = new Point(21, 94);
+            lblDecoracion1.Name = "lblDecoracion1";
+            lblDecoracion1.Size = new Size(130, 20);
+            lblDecoracion1.TabIndex = 5;
+            lblDecoracion1.Text = "(         ,        )";
+            // 
+            // lblDecoracion2
+            // 
+            lblDecoracion2.AutoSize = true;
+            lblDecoracion2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDecoracion2.Location = new Point(202, 94);
+            lblDecoracion2.Name = "lblDecoracion2";
+            lblDecoracion2.Size = new Size(130, 20);
+            lblDecoracion2.TabIndex = 6;
+            lblDecoracion2.Text = "(         ,        )";
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLimpiar.Location = new Point(12, 154);
+            btnLimpiar.Margin = new Padding(3, 4, 3, 4);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(484, 52);
+            btnLimpiar.TabIndex = 2;
+            btnLimpiar.Text = "Limpiar Plano";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            // 
+            // btnCalcularDistancia
+            // 
+            btnCalcularDistancia.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCalcularDistancia.Location = new Point(502, 154);
+            btnCalcularDistancia.Margin = new Padding(3, 4, 3, 4);
+            btnCalcularDistancia.Name = "btnCalcularDistancia";
+            btnCalcularDistancia.Size = new Size(507, 52);
+            btnCalcularDistancia.TabIndex = 3;
+            btnCalcularDistancia.Text = "Calcular Distancia";
+            btnCalcularDistancia.UseVisualStyleBackColor = true;
+            // 
+            // pnlContenedor
+            // 
+            pnlContenedor.Location = new Point(12, 228);
+            pnlContenedor.Margin = new Padding(3, 4, 3, 4);
+            pnlContenedor.Name = "pnlContenedor";
+            pnlContenedor.Size = new Size(997, 529);
+            pnlContenedor.TabIndex = 4;
+            pnlContenedor.Paint += this.PnlContenedor_Paint;
+            // 
+            // lblPropietario
+            // 
+            lblPropietario.AutoSize = true;
+            lblPropietario.Location = new Point(933, 779);
+            lblPropietario.Name = "lblPropietario";
+            lblPropietario.Size = new Size(84, 20);
+            lblPropietario.TabIndex = 5;
+            lblPropietario.Text = "Julio Blacio";
+            // 
+            // FrmDDA
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1021, 810);
+            Controls.Add(lblPropietario);
+            Controls.Add(pnlContenedor);
+            Controls.Add(btnCalcularDistancia);
+            Controls.Add(btnLimpiar);
+            Controls.Add(groupBox1);
+            DoubleBuffered = true;
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "FrmDDA";
+            Text = "DDA";
+            WindowState = FormWindowState.Maximized;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label lblDistancia;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblDecoracion1;
+        private System.Windows.Forms.TextBox txtY2;
+        private System.Windows.Forms.TextBox txtX2;
+        private System.Windows.Forms.TextBox txtY1;
+        private System.Windows.Forms.TextBox txtX1;
+        private System.Windows.Forms.Label lblPunto2;
+        private System.Windows.Forms.Label lblPunto1;
+        private System.Windows.Forms.Label lblDecoracion2;
+        private System.Windows.Forms.Label lblResultadoDeltaY;
+        private System.Windows.Forms.Label lblResultadoDeltaX;
+        private System.Windows.Forms.Label lblDeltaY;
+        private System.Windows.Forms.Label lblDeltaX;
+        private System.Windows.Forms.Label lblResultadoPendiente;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnCalcularDistancia;
+        private System.Windows.Forms.Panel pnlContenedor;
+        private System.Windows.Forms.Label lblPropietario;
+    }
+}
+

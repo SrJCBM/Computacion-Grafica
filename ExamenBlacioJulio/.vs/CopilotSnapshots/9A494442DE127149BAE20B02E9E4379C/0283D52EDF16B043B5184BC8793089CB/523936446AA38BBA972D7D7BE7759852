@@ -1,0 +1,100 @@
+﻿using System;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Windows.Forms;
+
+namespace ExamenBlacioJulio
+{
+    public partial class FrmMargarita : Form
+    {
+        private float ladoBase;
+        private float escala = 1f;
+
+        public FrmMargarita()
+        {
+            InitializeComponent();
+            trackBar1.Minimum = 2;
+            trackBar1.Maximum = 30;
+            trackBar1.Value = 10;
+            trackBar1.TickFrequency = 2;
+            lblEscalaValor.Text = "1.0x";
+        }
+
+        private void BtnCalcular_Click(object sender, EventArgs e)
+        {
+            if (!float.TryParse(txtAncho.Text, out ladoBase) || ladoBase <= 0)
+            {
+                MessageBox.Show("Ingresa un tamaño válido mayor que 0.");
+                return;
+            }
+
+            lblResultado.Text = $"Tamaño base: {ladoBase:0.##}";
+            pnlCanvas.Invalidate();
+        }
+
+        private void BtnResetear_Click(object sender, EventArgs e)
+        {
+            txtAncho.Clear();
+            lblResultado.Text = "Tamaño base:";
+            ladoBase = 0;
+            escala = 1f;
+            trackBar1.Value = 10;
+            lblEscalaValor.Text = "1.0x";
+            pnlCanvas.Invalidate();
+        }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            escala = trackBar1.Value / 10f;
+            lblEscalaValor.Text = $"{escala:0.0}x";
+            pnlCanvas.Invalidate();
+        }
+
+        private void pnlCanvas_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            g.Clear(Color.White);
+
+            if (ladoBase <= 0)
+            {
+                using (Font f = new Font("Segoe UI", 11f, FontStyle.Regular))
+                using (Brush b = new SolidBrush(Color.Gray))
+                {
+                    g.DrawString("Ingresa el tamaño y presiona Calcular.", f, b, 15, 15);
+                }
+                return;
+            }
+
+            PointF center = new PointF(pnlCanvas.Width / 2f, pnlCanvas.Height / 2f);
+            float mainRadius = Math.Min(pnlCanvas.Width, pnlCanvas.Height) * 0.18f * escala;
+            float petalRadius = mainRadius * 0.35f;
+
+            // Pentágono exterior
+            PointF[] mainPentagon = PolygonGeometry.CreateRegularPolygon(center, mainRadius, 5, -90f);
+
+            using (Pen border = new Pen(Color.Black, 2f))
+            using (Brush red = new SolidBrush(Color.Red))
+            {
+                // Dibujar los 5 pentágonos pequeños rellenos de rojo
+                for (int i = 0; i < 5; i++)
+                {
+                    float angle = -90f + (i * 72f);
+                    PointF petalCenter = PolygonGeometry.PointOnCircle(center, mainRadius * 0.65f, angle);
+                    PointF[] petalPentagon = PolygonGeometry.CreateRegularPolygon(petalCenter, petalRadius, 5, angle);
+
+                    g.FillPolygon(red, petalPentagon);
+                    g.DrawPolygon(border, petalPentagon);
+                }
+
+                // Dibujar el pentágono exterior
+                g.DrawPolygon(border, mainPentagon);
+            }
+        }
+    }
+}

@@ -1,0 +1,114 @@
+﻿using System;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Windows.Forms;
+
+namespace ExamenBlacioJulio
+{
+    public partial class FrmGema : Form
+    {
+        private float ladoBase;
+        private float escala = 1f;
+
+        public FrmGema()
+        {
+            InitializeComponent();
+            trackBar1.Minimum = 2;
+            trackBar1.Maximum = 30;
+            trackBar1.Value = 10;
+            trackBar1.TickFrequency = 2;
+            lblEscalaValor.Text = "1.0x";
+        }
+
+        private void BtnCalcular_Click(object sender, EventArgs e)
+        {
+            if (!float.TryParse(txtAncho.Text, out ladoBase) || ladoBase <= 0)
+            {
+                MessageBox.Show("Ingresa un tamaño válido mayor que 0.");
+                return;
+            }
+
+            lblDescripcion.Text = $"Lado del decágono: {ladoBase:0.##}";
+            pnlCanvas.Invalidate();
+        }
+
+        private void BtnResetear_Click(object sender, EventArgs e)
+        {
+            txtAncho.Clear();
+            lblDescripcion.Text = "Lado del decágono:";
+            ladoBase = 0;
+            escala = 1f;
+            trackBar1.Value = 10;
+            lblEscalaValor.Text = "1.0x";
+            pnlCanvas.Invalidate();
+        }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            escala = trackBar1.Value / 10f;
+            lblEscalaValor.Text = $"{escala:0.0}x";
+            pnlCanvas.Invalidate();
+        }
+
+        private void pnlCanvas_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            g.Clear(Color.White);
+
+            if (ladoBase <= 0)
+            {
+                using (Font f = new Font("Segoe UI", 11f, FontStyle.Regular))
+                using (Brush b = new SolidBrush(Color.Gray))
+                return;
+            }
+
+            float sidePx = ladoBase * 11f * escala;
+            float outerRadiusBySide = sidePx / (2f * (float)Math.Sin(Math.PI / 10f));
+            float outerRadius = Math.Min(outerRadiusBySide, Math.Min(pnlCanvas.Width, pnlCanvas.Height) * 0.33f);
+
+            PointF c = new PointF(pnlCanvas.Width / 2f, pnlCanvas.Height / 2f);
+            PointF[] v = PolygonGeometry.CreateRegularPolygon(c, outerRadius, 10, -90f);
+
+            float rA = outerRadius * 0.74f;
+            float rB = outerRadius * 0.50f;
+            float rCore = outerRadius * 0.13f;
+
+            using (Pen penOut = new Pen(Color.Black, 2f))
+            using (Pen penBlue = new Pen(Color.Blue, 2f))
+            {
+                g.DrawPolygon(penOut, v);
+
+                for (int i = 0; i < 10; i++)
+                {
+                    float a0 = -90f + (i * 36f);
+                    float a1 = a0 + 18f;
+                    float a2 = a0 + 36f;
+
+                    PointF p0 = PolygonGeometry.PointOnCircle(c, outerRadius, a0);
+                    PointF p1 = PolygonGeometry.PointOnCircle(c, rA, a1);
+                    PointF p2 = PolygonGeometry.PointOnCircle(c, rB, a0 + 9f);
+                    PointF p3 = PolygonGeometry.PointOnCircle(c, rCore, a1);
+                    PointF p4 = PolygonGeometry.PointOnCircle(c, rB, a2 - 9f);
+                    PointF p5 = PolygonGeometry.PointOnCircle(c, rA, a1);
+                    PointF p6 = PolygonGeometry.PointOnCircle(c, outerRadius, a2);
+
+                    g.DrawLine(penBlue, p0, p1);
+                    g.DrawLine(penBlue, p1, p2);
+                    g.DrawLine(penBlue, p2, p3);
+                    g.DrawLine(penBlue, p3, p4);
+                    g.DrawLine(penBlue, p4, p5);
+                    g.DrawLine(penBlue, p5, p6);
+
+                    PointF nextMid = PolygonGeometry.PointOnCircle(c, rA, a1 + 36f);
+                    g.DrawLine(penBlue, p1, nextMid);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+﻿using System;
+
+namespace GeometriaComputacional
+{
+    internal class PuntoGeometrico
+    {
+        public float X { get; set; }
+        public float Y { get; set; }
+        public string Nombre { get; set; }
+
+        public PuntoGeometrico(float x, float y, string nombre)
+        {
+            X = x;
+            Y = y;
+            Nombre = nombre;
+        }
+
+        public double CalcularDistancia(PuntoGeometrico otro)
+        {
+            if (otro == null)
+                throw new ArgumentNullException(nameof(otro));
+
+            double dx = otro.X - this.X;
+            double dy = otro.Y - this.Y;
+            return Math.Sqrt((dx * dx) + (dy * dy));
+        }
+
+        public float CalcularDeltaX(PuntoGeometrico otro)
+        {
+            if (otro == null)
+                throw new ArgumentNullException(nameof(otro));
+            return otro.X - this.X;
+        }
+
+        public float CalcularDeltaY(PuntoGeometrico otro)
+        {
+            if (otro == null)
+                throw new ArgumentNullException(nameof(otro));
+            return otro.Y - this.Y;
+        }
+
+        public bool EstaProximo(float x, float y, float tolerancia = 0.5f)
+        {
+            return Math.Abs(this.X - x) < tolerancia && Math.Abs(this.Y - y) < tolerancia;
+        }
+    }
+}

@@ -1,0 +1,327 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace GeometriaComputacional
+{
+    public partial class FrmDDA : Form
+    {
+        private PuntoGeometrico p1, p2;
+        private PuntoGeometrico puntoCapturado = null;
+        private bool arrastrando = false;
+        private const int ESCALA = 20;
+        private const float TOLERANCIA_CLICK = 0.8f;
+
+        public FrmDDA()
+        {
+            InitializeComponent();
+            this.DoubleBuffered = true;
+            ConfigurarPanel();
+        }
+
+        private void ConfigurarPanel()
+        {
+            pnlContenedor.MouseDown += PnlContenedor_MouseDown;
+            pnlContenedor.MouseMove += PnlContenedor_MouseMove;
+            pnlContenedor.MouseUp += PnlContenedor_MouseUp;
+            pnlContenedor.Paint += PnlContenedor_Paint;
+
+            btnLimpiar.Click += BtnLimpiar_Click;
+            btnCalcularDistancia.Click += BtnCalcularDistancia_Click;
+
+            txtX1.TextChanged += TxtX1_TextChanged;
+            txtY1.TextChanged += TxtY1_TextChanged;
+            txtX2.TextChanged += TxtX2_TextChanged;
+            txtY2.TextChanged += TxtY2_TextChanged;
+        }
+
+        private PointF CartesianoAPantalla(float x, float y)
+        {
+            float centroX = pnlContenedor.Width / 2.0f;
+            float centroY = pnlContenedor.Height / 2.0f;
+            return new PointF(centroX + (x * ESCALA), centroY - (y * ESCALA));
+        }
+
+        private PointF PantallaACartesiano(Point p)
+        {
+            float centroX = pnlContenedor.Width / 2.0f;
+            float centroY = pnlContenedor.Height / 2.0f;
+            return new PointF((p.X - centroX) / ESCALA, (centroY - p.Y) / ESCALA);
+        }
+
+        private void PnlContenedor_MouseDown(object sender, MouseEventArgs e)
+        {
+            PointF coordActual = PantallaACartesiano(e.Location);
+
+            if (p1 == null)
+            {
+                p1 = new PuntoGeometrico(coordActual.X, coordActual.Y, "A");
+            }
+            else if (p2 == null)
+            {
+                p2 = new PuntoGeometrico(coordActual.X, coordActual.Y, "B");
+            }
+            else
+            {
+                if (p1.EstaProximo(coordActual.X, coordActual.Y, TOLERANCIA_CLICK))
+                {
+                    puntoCapturado = p1;
+                    arrastrando = true;
+                }
+                else if (p2.EstaProximo(coordActual.X, coordActual.Y, TOLERANCIA_CLICK))
+                {
+                    puntoCapturado = p2;
+                    arrastrando = true;
+                }
+            }
+
+            ActualizarResultados();
+            pnlContenedor.Invalidate();
+        }
+
+        private void PnlContenedor_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (arrastrando && puntoCapturado != null)
+            {
+                PointF coordActual = PantallaACartesiano(e.Location);
+                puntoCapturado.X = coordActual.X;
+                puntoCapturado.Y = coordActual.Y;
+
+                ActualizarResultados();
+                pnlContenedor.Invalidate();
+            }
+        }
+
+        private void PnlContenedor_MouseUp(object sender, MouseEventArgs e)
+        {
+            arrastrando = false;
+            puntoCapturado = null;
+        }
+
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            p1 = null;
+            p2 = null;
+            puntoCapturado = null;
+            arrastrando = false;
+
+            lblResultadoDeltaX.Text = "";
+            lblResultadoDeltaY.Text = "";
+            lblResultadoPendiente.Text = "";
+            txtX1.Text = "";
+            txtY1.Text = "";
+            txtX2.Text = "";
+            txtY2.Text = "";
+
+            pnlContenedor.Invalidate();
+        }
+
+        private void BtnCalcularDistancia_Click(object sender, EventArgs e)
+        {
+            if (p1 != null && p2 != null)
+            {
+                ActualizarResultados();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, coloca dos puntos en el plano primero.", "Información");
+            }
+        }
+
+        private void TxtX1_TextChanged(object sender, EventArgs e)
+        {
+            if (float.TryParse(txtX1.Text, out float x))
+            {
+                if (p1 == null)
+                    p1 = new PuntoGeometrico(x, 0, "A");
+                else
+                    p1.X = x;
+
+                ActualizarResultados();
+                pnlContenedor.Invalidate();
+            }
+        }
+
+        private void TxtY1_TextChanged(object sender, EventArgs e)
+        {
+            if (float.TryParse(txtY1.Text, out float y))
+            {
+                if (p1 == null)
+                    p1 = new PuntoGeometrico(0, y, "A");
+                else
+                    p1.Y = y;
+
+                ActualizarResultados();
+                pnlContenedor.Invalidate();
+            }
+        }
+
+        private void TxtX2_TextChanged(object sender, EventArgs e)
+        {
+            if (float.TryParse(txtX2.Text, out float x))
+            {
+                if (p2 == null)
+                    p2 = new PuntoGeometrico(x, 0, "B");
+                else
+                    p2.X = x;
+
+                ActualizarResultados();
+                pnlContenedor.Invalidate();
+            }
+        }
+
+        private void TxtY2_TextChanged(object sender, EventArgs e)
+        {
+            if (float.TryParse(txtY2.Text, out float y))
+            {
+                if (p2 == null)
+                    p2 = new PuntoGeometrico(0, y, "B");
+                else
+                    p2.Y = y;
+
+                ActualizarResultados();
+                pnlContenedor.Invalidate();
+            }
+        }
+
+        private void ActualizarResultados()
+        {
+            if (p1 != null)
+            {
+                txtX1.Text = p1.X.ToString("F1");
+                txtY1.Text = p1.Y.ToString("F1");
+            }
+
+            if (p2 != null)
+            {
+                txtX2.Text = p2.X.ToString("F1");
+                txtY2.Text = p2.Y.ToString("F1");
+            }
+
+            if (p1 != null && p2 != null)
+            {
+                float dx = p2.X - p1.X;
+                float dy = p2.Y - p1.Y;
+                List<PuntoGeometrico> puntosDDA = PuntoGeometrico.GenerarDDA(p1, p2);
+
+                lblResultadoDeltaX.Text = dx.ToString("F2");
+                lblResultadoDeltaY.Text = dy.ToString("F2");
+                lblResultadoPendiente.Text = puntosDDA.Count.ToString();
+            }
+        }
+
+        private void PnlContenedor_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            g.Clear(Color.White);
+
+            float centroX = pnlContenedor.ClientSize.Width / 2.0f;
+            float centroY = pnlContenedor.ClientSize.Height / 2.0f;
+
+            DibujarPlanoCartesiano(g, centroX, centroY);
+            DibujarRectaDDA(g);
+        }
+
+        private void DibujarPlanoCartesiano(Graphics g, float centroX, float centroY)
+        {
+            using (Pen penGrilla = new Pen(Color.Gainsboro, 1))
+            {
+                for (int i = -30; i <= 30; i++)
+                {
+                    g.DrawLine(penGrilla, centroX + (i * ESCALA), 0, centroX + (i * ESCALA), pnlContenedor.Height);
+                    g.DrawLine(penGrilla, 0, centroY + (i * ESCALA), pnlContenedor.Width, centroY + (i * ESCALA));
+                }
+            }
+
+            using (Pen penEjes = new Pen(Color.Black, 2))
+            {
+                g.DrawLine(penEjes, centroX, 0, centroX, pnlContenedor.Height);
+                g.DrawLine(penEjes, 0, centroY, pnlContenedor.Width, centroY);
+            }
+
+            using (Font font = new Font("Arial", 8))
+            {
+                g.DrawString("X", font, Brushes.Black, pnlContenedor.Width - 15, centroY + 4);
+                g.DrawString("Y", font, Brushes.Black, centroX + 4, 4);
+            }
+        }
+
+        private void DibujarRectaDDA(Graphics g)
+        {
+            if (p1 == null)
+            {
+                return;
+            }
+
+            PointF pt1 = CartesianoAPantalla(p1.X, p1.Y);
+            DibujarBurbuja(g, pt1, $"A({p1.X:F1}, {p1.Y:F1})", Brushes.Red, Color.DarkRed);
+            g.FillEllipse(Brushes.Red, pt1.X - 5, pt1.Y - 5, 10, 10);
+
+            if (p2 == null)
+            {
+                return;
+            }
+
+            PointF pt2 = CartesianoAPantalla(p2.X, p2.Y);
+            DibujarBurbuja(g, pt2, $"B({p2.X:F1}, {p2.Y:F1})", Brushes.Green, Color.DarkGreen);
+            g.FillEllipse(Brushes.Green, pt2.X - 5, pt2.Y - 5, 10, 10);
+
+            List<PuntoGeometrico> puntosDDA = PuntoGeometrico.GenerarDDA(p1, p2);
+
+            using (Pen penLinea = new Pen(Color.RoyalBlue, 2))
+            {
+                for (int i = 0; i < puntosDDA.Count - 1; i++)
+                {
+                    PointF origen = CartesianoAPantalla(puntosDDA[i].X, puntosDDA[i].Y);
+                    PointF destino = CartesianoAPantalla(puntosDDA[i + 1].X, puntosDDA[i + 1].Y);
+                    g.DrawLine(penLinea, origen, destino);
+                }
+            }
+
+            foreach (PuntoGeometrico punto in puntosDDA)
+            {
+                PointF dibujado = CartesianoAPantalla(punto.X, punto.Y);
+                g.FillEllipse(Brushes.RoyalBlue, dibujado.X - 2, dibujado.Y - 2, 4, 4);
+            }
+        }
+
+        private void DibujarBurbuja(Graphics g, PointF punto, string texto, Brush colorFondo, Color colorBorde)
+        {
+            Font font = new Font("Arial", 9, FontStyle.Bold);
+            SizeF textSize = g.MeasureString(texto, font);
+
+            int padding = 8;
+            float burbujaX = punto.X + 15;
+            float burbujaY = punto.Y - textSize.Height / 2 - padding / 2;
+            float burbujaWidth = textSize.Width + padding * 2;
+            float burbujaHeight = textSize.Height + padding;
+
+            // Fondo de la burbuja con esquinas redondeadas
+            using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+            {
+                int cornerRadius = 8;
+                path.AddArc(burbujaX, burbujaY, cornerRadius, cornerRadius, 180, 90);
+                path.AddArc(burbujaX + burbujaWidth - cornerRadius, burbujaY, cornerRadius, cornerRadius, 270, 90);
+                path.AddArc(burbujaX + burbujaWidth - cornerRadius, burbujaY + burbujaHeight - cornerRadius, cornerRadius, cornerRadius, 0, 90);
+                path.AddArc(burbujaX, burbujaY + burbujaHeight - cornerRadius, cornerRadius, cornerRadius, 90, 90);
+                path.CloseFigure();
+
+                g.FillPath(colorFondo, path);
+                using (Pen pen = new Pen(colorBorde, 2))
+                {
+                    g.DrawPath(pen, path);
+                }
+            }
+
+            g.DrawString(texto, font, Brushes.Black, burbujaX + padding, burbujaY + padding / 2);
+            font.Dispose();
+        }
+    }
+}

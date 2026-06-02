@@ -1,0 +1,203 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|c:\\users\\jcbla\\desktop\\espe\\sexto semestre\\computacion grafica\\examenblaciojulio\\examenblaciojulio\\frmmargarita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|solutionrelative:examenblaciojulio\\frmmargarita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\examenblaciojulio\\frmgema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|solutionrelative:examenblaciojulio\\frmgema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\examenblaciojulio\\frmgema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|solutionrelative:examenblaciojulio\\frmgema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\examenblaciojulio\\polygongeometry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|solutionrelative:examenblaciojulio\\polygongeometry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\examenblaciojulio\\frmmargarita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|solutionrelative:examenblaciojulio\\frmmargarita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\examenblaciojulio\\frmhome.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|solutionrelative:examenblaciojulio\\frmhome.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\examenblaciojulio\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|solutionrelative:examenblaciojulio\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\examenblaciojulio\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|solutionrelative:examenblaciojulio\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\examenblaciojulio\\frmgema.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|solutionrelative:examenblaciojulio\\frmgema.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\examenblaciojulio\\frmmargarita.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|solutionrelative:examenblaciojulio\\frmmargarita.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\examenblaciojulio\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{520F7649-A995-4B80-9230-F412D152422A}|ExamenBlacioJulio\\ExamenBlacioJulio.csproj|solutionrelative:examenblaciojulio\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FrmHome.cs",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\FrmHome.cs",
+              "RelativeDocumentMoniker": "ExamenBlacioJulio\\FrmHome.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\FrmHome.cs",
+              "RelativeToolTip": "ExamenBlacioJulio\\FrmHome.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T16:55:54.811Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrmMargarita.cs",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\FrmMargarita.cs",
+              "RelativeDocumentMoniker": "ExamenBlacioJulio\\FrmMargarita.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\FrmMargarita.cs",
+              "RelativeToolTip": "ExamenBlacioJulio\\FrmMargarita.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAgwHAAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T17:09:30.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmGema.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\FrmGema.cs",
+              "RelativeDocumentMoniker": "ExamenBlacioJulio\\FrmGema.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\FrmGema.cs [Dise\u00F1o]",
+              "RelativeToolTip": "ExamenBlacioJulio\\FrmGema.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T16:59:01.896Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmGema.cs",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\FrmGema.cs",
+              "RelativeDocumentMoniker": "ExamenBlacioJulio\\FrmGema.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\FrmGema.cs",
+              "RelativeToolTip": "ExamenBlacioJulio\\FrmGema.cs",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAgwKwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T17:10:27.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PolygonGeometry.cs",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\PolygonGeometry.cs",
+              "RelativeDocumentMoniker": "ExamenBlacioJulio\\PolygonGeometry.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\PolygonGeometry.cs",
+              "RelativeToolTip": "ExamenBlacioJulio\\PolygonGeometry.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T17:08:38.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FrmMargarita.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\FrmMargarita.cs",
+              "RelativeDocumentMoniker": "ExamenBlacioJulio\\FrmMargarita.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\FrmMargarita.cs [Dise\u00F1o]",
+              "RelativeToolTip": "ExamenBlacioJulio\\FrmMargarita.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T16:57:54.617Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FrmHome.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\FrmHome.Designer.cs",
+              "RelativeDocumentMoniker": "ExamenBlacioJulio\\FrmHome.Designer.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\FrmHome.Designer.cs",
+              "RelativeToolTip": "ExamenBlacioJulio\\FrmHome.Designer.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T17:11:53.067Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FrmHome.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\FrmHome.cs",
+              "RelativeDocumentMoniker": "ExamenBlacioJulio\\FrmHome.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\FrmHome.cs [Dise\u00F1o]",
+              "RelativeToolTip": "ExamenBlacioJulio\\FrmHome.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T16:55:05.816Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FrmMargarita.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\FrmMargarita.Designer.cs",
+              "RelativeDocumentMoniker": "ExamenBlacioJulio\\FrmMargarita.Designer.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\FrmMargarita.Designer.cs",
+              "RelativeToolTip": "ExamenBlacioJulio\\FrmMargarita.Designer.cs",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T17:12:51.894Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FrmGema.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\FrmGema.Designer.cs",
+              "RelativeDocumentMoniker": "ExamenBlacioJulio\\FrmGema.Designer.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\FrmGema.Designer.cs",
+              "RelativeToolTip": "ExamenBlacioJulio\\FrmGema.Designer.cs",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T17:12:52.014Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\Program.cs",
+              "RelativeDocumentMoniker": "ExamenBlacioJulio\\Program.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\ExamenBlacioJulio\\ExamenBlacioJulio\\Program.cs",
+              "RelativeToolTip": "ExamenBlacioJulio\\Program.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T17:08:37.07Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

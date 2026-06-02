@@ -1,0 +1,17 @@
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\Algoritmos\Algoritmos\obj\Debug\net10.0-windows\Algoritmos.FrmAlgoritmo.resources
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\Algoritmos\Algoritmos\obj\Debug\net10.0-windows\Algoritmos.csproj.GenerateResource.cache
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\Algoritmos\Algoritmos\obj\Debug\net10.0-windows\Algoritmos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\Algoritmos\Algoritmos\obj\Debug\net10.0-windows\Algoritmos.AssemblyInfoInputs.cache
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\Algoritmos\Algoritmos\obj\Debug\net10.0-windows\Algoritmos.AssemblyInfo.cs
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\Algoritmos\Algoritmos\obj\Debug\net10.0-windows\Algoritmos.csproj.CoreCompileInputs.cache
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\Algoritmos\Algoritmos\bin\Debug\net10.0-windows\Algoritmos.deps.json
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\Algoritmos\Algoritmos\bin\Debug\net10.0-windows\Algoritmos.runtimeconfig.json
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\Algoritmos\Algoritmos\bin\Debug\net10.0-windows\Algoritmos.dll
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\Algoritmos\Algoritmos\bin\Debug\net10.0-windows\Algoritmos.pdb
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\Algoritmos\Algoritmos\obj\Debug\net10.0-windows\Algoritmos.dll
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\Algoritmos\Algoritmos\obj\Debug\net10.0-windows\refint\Algoritmos.dll
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\Algoritmos\Algoritmos\obj\Debug\net10.0-windows\Algoritmos.pdb
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\Algoritmos\Algoritmos\obj\Debug\net10.0-windows\Algoritmos.genruntimeconfig.cache
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\Algoritmos\Algoritmos\obj\Debug\net10.0-windows\ref\Algoritmos.dll
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\Algoritmos\Algoritmos\obj\Debug\net10.0-windows\GeometriaComputacional.FrmDDA.resources
+C:\Users\jcbla\Desktop\ESPE\Sexto Semestre\Computacion Grafica\Algoritmos\Algoritmos\bin\Debug\net10.0-windows\Algoritmos.exe

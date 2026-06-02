@@ -1,0 +1,44 @@
+﻿namespace Algoritmos
+{
+    public partial class FrmAlgoritmo : Form
+    {
+        public FrmAlgoritmo()
+        {
+            InitializeComponent();
+        }
+
+        private void AbrirFormulario<T>() where T : Form, new()
+        {
+            Form formularioActual = null;
+
+            foreach (Form hijo in this.MdiChildren)
+            {
+                if (hijo is T)
+                {
+                    formularioActual = hijo;
+                }
+                else
+                {
+                    hijo.Close();
+                }
+            }
+
+            if (formularioActual != null)
+            {
+                formularioActual.BringToFront();
+                return;
+            }
+
+            T formulario = new T();
+            formulario.MdiParent = this;
+            formulario.Show();
+        }
+
+        private void dDAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmDDA>();
+        }
+
+
+     }
+}

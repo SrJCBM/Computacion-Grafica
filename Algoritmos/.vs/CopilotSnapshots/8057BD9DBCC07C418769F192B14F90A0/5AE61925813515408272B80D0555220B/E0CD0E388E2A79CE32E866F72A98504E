@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace GeometriaComputacional
+{
+    internal class PuntoGeometrico
+    {
+        public float X { get; set; }
+        public float Y { get; set; }
+        public string Nombre { get; set; }
+
+        public PuntoGeometrico(float x, float y, string nombre)
+        {
+            X = x;
+            Y = y;
+            Nombre = nombre;
+        }
+
+        public static List<PuntoGeometrico> GenerarDDA(PuntoGeometrico inicio, PuntoGeometrico fin)
+        {
+            if (inicio == null)
+                throw new ArgumentNullException(nameof(inicio));
+            if (fin == null)
+                throw new ArgumentNullException(nameof(fin));
+
+            var puntos = new List<PuntoGeometrico>();
+
+            float dx = fin.X - inicio.X;
+            float dy = fin.Y - inicio.Y;
+            float pasos = Math.Max(Math.Abs(dx), Math.Abs(dy));
+
+            if (pasos == 0)
+            {
+                puntos.Add(new PuntoGeometrico(inicio.X, inicio.Y, inicio.Nombre));
+                return puntos;
+            }
+
+            float incrementoX = dx / pasos;
+            float incrementoY = dy / pasos;
+            float x = inicio.X;
+            float y = inicio.Y;
+
+            for (int i = 0; i <= (int)pasos; i++)
+            {
+                puntos.Add(new PuntoGeometrico((float)Math.Round(x), (float)Math.Round(y), string.Empty));
+                x += incrementoX;
+                y += incrementoY;
+            }
+
+            return puntos;
+        }
+
+        public bool EstaProximo(float x, float y, float tolerancia = 0.5f)
+        {
+            return Math.Abs(X - x) < tolerancia && Math.Abs(Y - y) < tolerancia;
+        }
+    }
+}
