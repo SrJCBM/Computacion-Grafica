@@ -55,5 +55,35 @@ namespace Algoritmos
         {
             AbrirFormulario<FrmPuntoMedioLinea>();
         }
+
+        private void puntoMedioDeCirculoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmPuntoMedioCirculo>();
+        }
+
+        private void parametricoDeCirculoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmParametricoCirculo>();
+        }
+
+        private void polarDeCirculoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmPolarCirculo>();
+        }
+
+        private void rellenoPorSemillaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //AbrirFormulario<FrmRellenoPorSemilla>();
+        }
+
+        private void rellenoPorPilaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //AbrirFormulario<FrmRellenoPorPila>();
+        }
+
+        private void rellenoScanlineToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //AbrirFormulario<FrmRellenoScanline>();
+        }
     }
 }
