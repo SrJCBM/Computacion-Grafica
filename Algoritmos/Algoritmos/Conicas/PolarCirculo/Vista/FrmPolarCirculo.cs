@@ -323,34 +323,41 @@ namespace GeometriaComputacional
         {
             if (xCentro == null) { DibujarAyuda(g); return; }
 
-            DibujarPuntoControl(g, xCentro.Value, yCentro!.Value, Color.FromArgb(22, 163, 74), "Centro");
+            if (radio == null)
+            {
+                DibujarPuntoControl(g, xCentro.Value, yCentro!.Value, Color.FromArgb(22, 163, 74), "Centro");
+                return;
+            }
 
-            if (radio == null) return;
-
-            PointF pCentro = CartesianoAPantalla(xCentro.Value, yCentro.Value);
+            PointF pCentro = CartesianoAPantalla(xCentro.Value, yCentro!.Value);
             float radioPixeles = radio.Value * escala;
+
+            // 1. Píxeles primero — quedan al fondo
+            if (resultado != null)
+            {
+                int cantidad = Math.Min(pasosVisibles, resultado.Pasos.Count);
+                using Brush pixel = new SolidBrush(Color.FromArgb(200, 147, 51, 234));
+                using Pen bordePixel = new(Color.FromArgb(180, 180, 180), 1);
+                for (int i = 0; i < cantidad; i++)
+                {
+                    var paso = resultado.Pasos[i];
+                    PointF pt = CartesianoAPantalla(paso.PixelX, paso.PixelY);
+                    RectangleF celda = new(pt.X - escala / 2f, pt.Y - escala / 2f, escala, escala);
+                    g.FillRectangle(pixel, celda);
+                    g.DrawRectangle(bordePixel, celda.X, celda.Y, celda.Width, celda.Height);
+                }
+            }
+
+            // 2. Círculo ideal encima de los píxeles
             using Pen penIdeal = new(Color.FromArgb(160, 37, 99, 235), 1.5f);
             g.DrawEllipse(penIdeal, pCentro.X - radioPixeles, pCentro.Y - radioPixeles, radioPixeles * 2, radioPixeles * 2);
 
+            // 3. Línea de radio y puntos de control al frente
             PointF pHandle = CartesianoAPantalla(xCentro.Value + radio.Value, yCentro.Value);
             using Pen penLinea = new(Color.FromArgb(150, 100, 116, 139), 1);
             g.DrawLine(penLinea, pCentro, pHandle);
             DibujarPuntoControl(g, xCentro.Value + radio.Value, yCentro.Value, Color.FromArgb(245, 158, 11), $"r={radio}");
-
-            if (resultado == null) return;
-
-            int cantidad = Math.Min(pasosVisibles, resultado.Pasos.Count);
-            using Brush pixel = new SolidBrush(Color.FromArgb(147, 51, 234, 200));
-            using Pen bordePixel = new(Color.White, 1);
-
-            for (int i = 0; i < cantidad; i++)
-            {
-                var paso = resultado.Pasos[i];
-                PointF pt = CartesianoAPantalla(paso.PixelX, paso.PixelY);
-                RectangleF celda = new(pt.X - escala / 2f, pt.Y - escala / 2f, escala, escala);
-                g.FillRectangle(pixel, celda);
-                g.DrawRectangle(bordePixel, celda.X, celda.Y, celda.Width, celda.Height);
-            }
+            DibujarPuntoControl(g, xCentro.Value, yCentro.Value, Color.FromArgb(22, 163, 74), "Centro");
         }
 
         private void DibujarPuntoControl(Graphics g, int x, int y, Color color, string etiqueta)
@@ -379,7 +386,7 @@ namespace GeometriaComputacional
 
             DibujarItemLeyenda(g, caja.X + 14, caja.Y + 34, Color.FromArgb(22, 163, 74), "Centro");
             DibujarItemLeyenda(g, caja.X + 94, caja.Y + 34, Color.FromArgb(245, 158, 11), "Handle radio");
-            DibujarItemLeyenda(g, caja.X + 214, caja.Y + 34, Color.FromArgb(147, 51, 234, 200), "Pixel theta");
+            DibujarItemLeyenda(g, caja.X + 214, caja.Y + 34, Color.FromArgb(200, 147, 51, 234), "Pixel theta");
         }
 
         private static void DibujarItemLeyenda(Graphics g, float x, float y, Color color, string textoItem)

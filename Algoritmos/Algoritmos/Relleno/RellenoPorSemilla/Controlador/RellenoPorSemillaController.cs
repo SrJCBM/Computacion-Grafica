@@ -31,7 +31,7 @@ namespace GeometriaComputacional.Relleno.RellenoPorSemilla.Controlador
             var enCola = new bool[ROWS, COLS];
             var cola = new Queue<(int X, int Y)>();
 
-            if (matriz[semY, semX] != VACIA)
+            if (matriz[semY, semX] != VACIA || !EsDentroDelaFigura(matriz, semX, semY))
                 return new ResultadoRelleno(semX, semY, pasos);
 
             cola.Enqueue((semX, semY));
@@ -60,6 +60,33 @@ namespace GeometriaComputacional.Relleno.RellenoPorSemilla.Controlador
             }
 
             return new ResultadoRelleno(semX, semY, pasos);
+        }
+
+        // BFS de pre-validacion: retorna false si la semilla alcanza el borde de la matriz
+        // (significa que esta fuera de la figura, no encerrada por un borde)
+        private static bool EsDentroDelaFigura(byte[,] matriz, int semX, int semY)
+        {
+            var visitado = new bool[ROWS, COLS];
+            var cola = new Queue<(int X, int Y)>();
+            cola.Enqueue((semX, semY));
+            visitado[semY, semX] = true;
+
+            while (cola.Count > 0)
+            {
+                var (x, y) = cola.Dequeue();
+                if (x == 0 || x == COLS - 1 || y == 0 || y == ROWS - 1)
+                    return false;
+                foreach (var (nx, ny) in new[] { (x, y - 1), (x + 1, y), (x, y + 1), (x - 1, y) })
+                {
+                    if (nx >= 0 && nx < COLS && ny >= 0 && ny < ROWS
+                        && matriz[ny, nx] == VACIA && !visitado[ny, nx])
+                    {
+                        visitado[ny, nx] = true;
+                        cola.Enqueue((nx, ny));
+                    }
+                }
+            }
+            return true;
         }
 
         private static void DibujarCuadrado(byte[,] m)

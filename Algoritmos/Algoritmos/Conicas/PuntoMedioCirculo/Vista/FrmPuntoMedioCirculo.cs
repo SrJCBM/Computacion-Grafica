@@ -328,36 +328,43 @@ namespace GeometriaComputacional
                 return;
             }
 
-            DibujarPuntoControl(g, xCentro.Value, yCentro!.Value, Color.FromArgb(22, 163, 74), "Centro");
+            if (radio == null)
+            {
+                DibujarPuntoControl(g, xCentro.Value, yCentro!.Value, Color.FromArgb(22, 163, 74), "Centro");
+                return;
+            }
 
-            if (radio == null) return;
-
-            PointF pCentro = CartesianoAPantalla(xCentro.Value, yCentro.Value);
+            PointF pCentro = CartesianoAPantalla(xCentro.Value, yCentro!.Value);
             float radioPixeles = radio.Value * escala;
+
+            // 1. Píxeles primero — quedan al fondo
+            if (resultado != null)
+            {
+                int cantidad = Math.Min(pasosVisibles, resultado.Pasos.Count);
+                using Brush pixel = new SolidBrush(Color.FromArgb(220, 38, 38));
+                using Pen bordePixel = new(Color.FromArgb(180, 180, 180), 1);
+                for (int i = 0; i < cantidad; i++)
+                {
+                    foreach (var (px, py) in resultado.Pasos[i].Puntos)
+                    {
+                        PointF pt = CartesianoAPantalla(px, py);
+                        RectangleF celda = new(pt.X - escala / 2f, pt.Y - escala / 2f, escala, escala);
+                        g.FillRectangle(pixel, celda);
+                        g.DrawRectangle(bordePixel, celda.X, celda.Y, celda.Width, celda.Height);
+                    }
+                }
+            }
+
+            // 2. Círculo ideal encima de los píxeles
             using Pen penIdeal = new(Color.FromArgb(160, 37, 99, 235), 1.5f);
             g.DrawEllipse(penIdeal, pCentro.X - radioPixeles, pCentro.Y - radioPixeles, radioPixeles * 2, radioPixeles * 2);
 
+            // 3. Línea de radio y puntos de control al frente
             PointF pHandle = CartesianoAPantalla(xCentro.Value + radio.Value, yCentro.Value);
             using Pen penLinea = new(Color.FromArgb(150, 100, 116, 139), 1);
             g.DrawLine(penLinea, pCentro, pHandle);
             DibujarPuntoControl(g, xCentro.Value + radio.Value, yCentro.Value, Color.FromArgb(245, 158, 11), $"r={radio}");
-
-            if (resultado == null) return;
-
-            int cantidad = Math.Min(pasosVisibles, resultado.Pasos.Count);
-            using Brush pixel = new SolidBrush(Color.FromArgb(220, 38, 38));
-            using Pen bordePixel = new(Color.White, 1);
-
-            for (int i = 0; i < cantidad; i++)
-            {
-                foreach (var (px, py) in resultado.Pasos[i].Puntos)
-                {
-                    PointF pt = CartesianoAPantalla(px, py);
-                    RectangleF celda = new(pt.X - escala / 2f, pt.Y - escala / 2f, escala, escala);
-                    g.FillRectangle(pixel, celda);
-                    g.DrawRectangle(bordePixel, celda.X, celda.Y, celda.Width, celda.Height);
-                }
-            }
+            DibujarPuntoControl(g, xCentro.Value, yCentro.Value, Color.FromArgb(22, 163, 74), "Centro");
         }
 
         private void DibujarPuntoControl(Graphics g, int x, int y, Color color, string etiqueta)

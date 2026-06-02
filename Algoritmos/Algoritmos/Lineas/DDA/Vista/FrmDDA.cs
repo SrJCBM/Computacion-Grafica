@@ -372,37 +372,37 @@ namespace GeometriaComputacional
                 return;
             }
 
-            DibujarPuntoControl(g, p1, Color.FromArgb(22, 163, 74));
-
             if (p2 == null)
             {
+                DibujarPuntoControl(g, p1, Color.FromArgb(22, 163, 74));
                 return;
             }
 
-            DibujarPuntoControl(g, p2, Color.FromArgb(245, 158, 11));
+            // 1. Píxeles primero — quedan al fondo
+            if (resultado != null)
+            {
+                int cantidad = Math.Min(pasosVisibles, resultado.Pasos.Count);
+                using Brush pixel = new SolidBrush(Color.FromArgb(220, 38, 38));
+                using Pen bordePixel = new(Color.FromArgb(180, 180, 180), 1);
+                for (int i = 0; i < cantidad; i++)
+                {
+                    PasoDDA paso = resultado.Pasos[i];
+                    PointF punto = CartesianoAPantalla(paso.XPixel, paso.YPixel);
+                    RectangleF celda = new(punto.X - escala / 2f, punto.Y - escala / 2f, escala, escala);
+                    g.FillRectangle(pixel, celda);
+                    g.DrawRectangle(bordePixel, celda.X, celda.Y, celda.Width, celda.Height);
+                }
+            }
 
+            // 2. Recta ideal encima de los píxeles
             PointF pt1 = CartesianoAPantalla(p1.X, p1.Y);
             PointF pt2 = CartesianoAPantalla(p2.X, p2.Y);
             using Pen ideal = new(Color.FromArgb(37, 99, 235), 2);
             g.DrawLine(ideal, pt1, pt2);
 
-            if (resultado == null)
-            {
-                return;
-            }
-
-            int cantidad = Math.Min(pasosVisibles, resultado.Pasos.Count);
-            using Brush pixel = new SolidBrush(Color.FromArgb(220, 38, 38));
-            using Pen bordePixel = new(Color.White, 1);
-
-            for (int i = 0; i < cantidad; i++)
-            {
-                PasoDDA paso = resultado.Pasos[i];
-                PointF punto = CartesianoAPantalla(paso.XPixel, paso.YPixel);
-                RectangleF celda = new(punto.X - escala / 2f, punto.Y - escala / 2f, escala, escala);
-                g.FillRectangle(pixel, celda);
-                g.DrawRectangle(bordePixel, celda.X, celda.Y, celda.Width, celda.Height);
-            }
+            // 3. Puntos de control al frente — nunca quedan tapados
+            DibujarPuntoControl(g, p1, Color.FromArgb(22, 163, 74));
+            DibujarPuntoControl(g, p2, Color.FromArgb(245, 158, 11));
         }
 
         private void DibujarPuntoControl(Graphics g, PuntoGeometrico punto, Color color)

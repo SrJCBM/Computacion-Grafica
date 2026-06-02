@@ -112,7 +112,7 @@ namespace GeometriaComputacional
             if (paso.Y < ROWS && paso.X < COLS) matriz[paso.Y, paso.X] = 2;
             pasoActual++;
             ActualizarPasos(pasoActual);
-            pnlContenedor.Invalidate();
+            pnlContenedor.Refresh();
         }
 
         private void PnlContenedor_MouseClick(object? sender, MouseEventArgs e)

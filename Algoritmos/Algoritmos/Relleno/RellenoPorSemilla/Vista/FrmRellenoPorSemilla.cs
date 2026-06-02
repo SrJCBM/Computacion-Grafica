@@ -129,7 +129,7 @@ namespace GeometriaComputacional
 
             pasoActual++;
             ActualizarPasos(pasoActual);
-            pnlContenedor.Invalidate();
+            pnlContenedor.Refresh();
         }
 
         // ─── Mouse en matriz ────────────────────────────────────────────
