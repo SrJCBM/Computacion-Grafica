@@ -1,0 +1,65 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\KENNED\\Desktop\\Computacion-Grafica\\Algoritmos\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\kenned\\desktop\\computacion-grafica\\algoritmos\\algoritmos\\frmalgoritmo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|solutionrelative:algoritmos\\frmalgoritmo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\kenned\\desktop\\computacion-grafica\\algoritmos\\algoritmos\\frmalgoritmo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|solutionrelative:algoritmos\\frmalgoritmo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 298,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmAlgoritmo.cs",
+              "DocumentMoniker": "C:\\Users\\KENNED\\Desktop\\Computacion-Grafica\\Algoritmos\\Algoritmos\\FrmAlgoritmo.cs",
+              "RelativeDocumentMoniker": "Algoritmos\\FrmAlgoritmo.cs",
+              "ToolTip": "C:\\Users\\KENNED\\Desktop\\Computacion-Grafica\\Algoritmos\\Algoritmos\\FrmAlgoritmo.cs",
+              "RelativeToolTip": "Algoritmos\\FrmAlgoritmo.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T17:31:57.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrmAlgoritmo.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\KENNED\\Desktop\\Computacion-Grafica\\Algoritmos\\Algoritmos\\FrmAlgoritmo.cs",
+              "RelativeDocumentMoniker": "Algoritmos\\FrmAlgoritmo.cs",
+              "ToolTip": "C:\\Users\\KENNED\\Desktop\\Computacion-Grafica\\Algoritmos\\Algoritmos\\FrmAlgoritmo.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Algoritmos\\FrmAlgoritmo.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T17:30:27.977Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
