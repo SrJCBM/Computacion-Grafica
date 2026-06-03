@@ -19,7 +19,7 @@ namespace GeometriaComputacional
         private const int ROWS = RellenoPorPilaController.ROWS;
 
         private static readonly Color ColorBorde   = Color.FromArgb(17, 24, 39);
-        private static readonly Color ColorRelleno = Color.FromArgb(167, 243, 208);   // verde claro
+        private static readonly Color ColorRelleno = Color.FromArgb(186, 230, 253);   // celeste
         private static readonly Color ColorSemilla = Color.FromArgb(22, 163, 74);
         private static readonly Color ColorLineas  = Color.FromArgb(209, 213, 219);
         private static readonly Color ColorTexto   = Color.FromArgb(30, 41, 59);
@@ -71,13 +71,20 @@ namespace GeometriaComputacional
         {
             if (matriz == null) DibujarFigura();
             var tipo = rbTriangulo.Checked ? TipoFiguraPila.Triangulo : TipoFiguraPila.Rombo;
-            var copia = controlador.GenerarMatriz(tipo);
-            resultado = controlador.Calcular(copia, semX, semY);
-            matriz = copia;
+            var matrizBase = controlador.GenerarMatriz(tipo);
+            var matrizCalculo = (byte[,])matrizBase.Clone();
+            resultado = controlador.Calcular(matrizCalculo, semX, semY);
+            matriz = matrizBase;
             pasoActual = 0;
 
             if (resultado.TotalCeldas == 0)
             { ActualizarEstado("Semilla sobre borde o fuera de figura."); return; }
+
+            if (nudDelay.Value <= 0)
+            {
+                PintarResultadoCompleto();
+                return;
+            }
 
             timer1.Interval = Math.Max(1, (int)nudDelay.Value);
             timer1.Start();
@@ -112,6 +119,20 @@ namespace GeometriaComputacional
             if (paso.Y < ROWS && paso.X < COLS) matriz[paso.Y, paso.X] = 2;
             pasoActual++;
             ActualizarPasos(pasoActual);
+            pnlContenedor.Refresh();
+        }
+
+        private void PintarResultadoCompleto()
+        {
+            if (resultado == null || matriz == null) return;
+
+            foreach (var paso in resultado.Pasos)
+                if (paso.Y < ROWS && paso.X < COLS)
+                    matriz[paso.Y, paso.X] = 2;
+
+            pasoActual = resultado.Pasos.Count;
+            ActualizarPasos(pasoActual);
+            ActualizarEstado($"Relleno completo. Celdas pintadas: {resultado.TotalCeldas}");
             pnlContenedor.Refresh();
         }
 

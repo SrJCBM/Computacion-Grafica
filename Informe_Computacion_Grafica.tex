@@ -11,6 +11,7 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{calc}
+\usepackage{float}
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{amsmath,amssymb}
 \setcounter{secnumdepth}{5}
@@ -124,6 +125,22 @@
   \IfFileExists{#1}{\includegraphics[width=#2]{#1}}{%
     \fbox{\parbox[c][1.4cm][c]{#2}{\centering\scriptsize Logo}}%
   }%
+}
+\newcommand{\CapturaPrueba}[3]{%
+  \begin{figure}[H]
+  \centering
+  \IfFileExists{#1}{%
+    \includegraphics[width=0.9\linewidth]{#1}%
+  }{%
+    \fbox{\parbox[c][6cm][c]{0.9\linewidth}{%
+      \centering
+      \textbf{Espacio reservado para captura}\\[0.4cm]
+      Archivo esperado: \texttt{#1}\\[0.2cm]
+      #3
+    }}%
+  }%
+  \caption{#2}
+  \end{figure}
 }
 
 \title{Informe Técnico: Algoritmos de Rasterización y Relleno en Computación Gráfica}
@@ -355,6 +372,57 @@ Algoritmos de Computación Gráfica Implementados
     ├── Por Pila (DFS/Stack)                    — Exploración en profundidad
     └── Scanline                                 — Relleno por tramos horizontales
 \end{lstlisting}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Capturas de Pantalla de Pruebas Realizadas}\label{capturas-de-pantalla-de-pruebas-realizadas}
+
+Esta sección reúne las evidencias visuales más importantes del
+funcionamiento del sistema. Las capturas seleccionadas cubren las tres
+familias de algoritmos implementadas: rasterización de líneas,
+generación de circunferencias y relleno de regiones. Se recomienda usar
+capturas donde se observe simultáneamente el plano o matriz de trabajo,
+los parámetros ingresados, la tabla de pasos y el resultado gráfico.
+
+\subsection{Prueba de Rasterización de Líneas}\label{prueba-de-rasterizacion-de-lineas}
+
+La captura de líneas debe mostrar la comparación entre la recta ideal y
+los píxeles discretos generados por el algoritmo. La prueba más
+representativa es Bresenham o DDA, porque permite observar claramente la
+diferencia entre una línea continua y su aproximación rasterizada sobre
+la grilla.
+
+\CapturaPrueba
+  {captura-linea-bresenham.png}
+  {Prueba del algoritmo de Bresenham para rasterización de líneas.}
+  {Sugerencia: captura la ventana con los puntos inicial y final, la línea ideal, los píxeles generados y la tabla de pasos.}
+
+\subsection{Prueba de Generación de Circunferencias}\label{prueba-de-generacion-de-circunferencias}
+
+La captura de circunferencias debe evidenciar la simetría del algoritmo
+respecto al centro y la forma en que los puntos generados aproximan la
+circunferencia ideal. La prueba más útil es Punto Medio de Círculo,
+porque muestra la ventaja de calcular un octante y reflejar los puntos
+por simetría.
+
+\CapturaPrueba
+  {captura-circulo-punto-medio.png}
+  {Prueba del algoritmo de Punto Medio para generación de circunferencias.}
+  {Sugerencia: captura el centro, el radio, la circunferencia ideal, los puntos rasterizados y la tabla de iteraciones.}
+
+\subsection{Prueba de Relleno de Regiones}\label{prueba-de-relleno-de-regiones}
+
+La captura de relleno debe mostrar una región cerrada, la semilla
+seleccionada y el patrón de expansión del algoritmo. La prueba más
+representativa es Scanline, porque permite comparar visualmente su
+eficiencia frente a BFS y DFS al rellenar tramos horizontales completos.
+
+\CapturaPrueba
+  {captura-relleno-scanline.png}
+  {Prueba del algoritmo Scanline para relleno de regiones.}
+  {Sugerencia: captura la figura cerrada, la semilla, las celdas rellenas y el avance por filas.}
+
+
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -1545,7 +1613,7 @@ documentados en este informe, está disponible en el repositorio de
 GitHub del autor:
 
 \textbf{Repositorio:}
-\href{https://github.com}{github.com/{[}usuario{]}/Computacion-Grafica}
+\href{https://github.com/SrJCBM/Computacion-Grafica}{github.com/SrJCBM/Computacion-Grafica}
 
 El repositorio contiene:
 
@@ -1558,7 +1626,5 @@ El repositorio contiene:
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-
 
 \end{document}

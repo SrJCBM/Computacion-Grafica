@@ -76,14 +76,21 @@ namespace GeometriaComputacional
             if (matriz == null) DibujarFigura();
 
             var tipo = rbCuadrado.Checked ? TipoFiguraSemilla.Cuadrado : TipoFiguraSemilla.Circulo;
-            var matrizCopia = controlador.GenerarMatriz(tipo);
-            resultado = controlador.Calcular(matrizCopia, semX, semY);
-            matriz = matrizCopia;
+            var matrizBase = controlador.GenerarMatriz(tipo);
+            var matrizCalculo = (byte[,])matrizBase.Clone();
+            resultado = controlador.Calcular(matrizCalculo, semX, semY);
+            matriz = matrizBase;
             pasoActual = 0;
 
             if (resultado.TotalCeldas == 0)
             {
                 ActualizarEstado("La semilla esta sobre un borde o fuera de la figura.");
+                return;
+            }
+
+            if (nudDelay.Value <= 0)
+            {
+                PintarResultadoCompleto();
                 return;
             }
 
@@ -129,6 +136,20 @@ namespace GeometriaComputacional
 
             pasoActual++;
             ActualizarPasos(pasoActual);
+            pnlContenedor.Refresh();
+        }
+
+        private void PintarResultadoCompleto()
+        {
+            if (resultado == null || matriz == null) return;
+
+            foreach (var paso in resultado.Pasos)
+                if (paso.Y < ROWS && paso.X < COLS)
+                    matriz[paso.Y, paso.X] = 2;
+
+            pasoActual = resultado.Pasos.Count;
+            ActualizarPasos(pasoActual);
+            ActualizarEstado($"Relleno completo. Celdas pintadas: {resultado.TotalCeldas}");
             pnlContenedor.Refresh();
         }
 

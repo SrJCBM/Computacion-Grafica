@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Folder Include="Lineas\DDA\Controlador\" />
-    <Folder Include="Lineas\Bresenham\" />
   </ItemGroup>
 
 </Project>

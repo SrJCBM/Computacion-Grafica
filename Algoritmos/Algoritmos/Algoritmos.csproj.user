@@ -22,5 +22,14 @@
     <Compile Update="Lineas\PuntoMedioLinea\Vista\FrmPuntoMedioLinea.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Relleno\RellenoPorPila\Vista\FrmRellenoPorPila.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Relleno\RellenoPorSemilla\Vista\FrmRellenoPorSemilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Relleno\RellenoScanline\Vista\FrmRellenoScanline.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

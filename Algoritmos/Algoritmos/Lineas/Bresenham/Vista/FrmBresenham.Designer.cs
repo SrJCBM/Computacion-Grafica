@@ -81,7 +81,7 @@ namespace GeometriaComputacional
             lblTitulo.ForeColor = Color.FromArgb(17, 24, 39);
             lblTitulo.Location = new Point(34, 24);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(286, 50);
+            lblTitulo.Size = new Size(405, 50);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Algoritmo Bresenham";
             // 
@@ -92,13 +92,12 @@ namespace GeometriaComputacional
             lblSubtitulo.ForeColor = Color.FromArgb(75, 85, 99);
             lblSubtitulo.Location = new Point(38, 76);
             lblSubtitulo.Name = "lblSubtitulo";
-            lblSubtitulo.Size = new Size(485, 23);
+            lblSubtitulo.Size = new Size(463, 23);
             lblSubtitulo.TabIndex = 1;
             lblSubtitulo.Text = "Rectas rasterizadas con error entero y decision incremental.";
             // 
             // pnlEntrada
             // 
-            pnlEntrada.Anchor = AnchorStyles.Top | AnchorStyles.Left;
             pnlEntrada.BackColor = Color.White;
             pnlEntrada.BorderStyle = BorderStyle.FixedSingle;
             pnlEntrada.Controls.Add(btnSalir);
@@ -211,7 +210,7 @@ namespace GeometriaComputacional
             lblX2.ForeColor = Color.FromArgb(75, 85, 99);
             lblX2.Location = new Point(492, 48);
             lblX2.Name = "lblX2";
-            lblX2.Size = new Size(25, 20);
+            lblX2.Size = new Size(26, 20);
             lblX2.TabIndex = 5;
             lblX2.Text = "X2";
             // 
@@ -233,7 +232,7 @@ namespace GeometriaComputacional
             lblX1.ForeColor = Color.FromArgb(75, 85, 99);
             lblX1.Location = new Point(68, 48);
             lblX1.Name = "lblX1";
-            lblX1.Size = new Size(25, 20);
+            lblX1.Size = new Size(26, 20);
             lblX1.TabIndex = 3;
             lblX1.Text = "X1";
             // 
@@ -244,7 +243,7 @@ namespace GeometriaComputacional
             lblPunto2.ForeColor = Color.FromArgb(17, 24, 39);
             lblPunto2.Location = new Point(408, 74);
             lblPunto2.Name = "lblPunto2";
-            lblPunto2.Size = new Size(63, 20);
+            lblPunto2.Size = new Size(64, 20);
             lblPunto2.TabIndex = 2;
             lblPunto2.Text = "Punto 2";
             // 
@@ -253,9 +252,9 @@ namespace GeometriaComputacional
             lblPunto1.AutoSize = true;
             lblPunto1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblPunto1.ForeColor = Color.FromArgb(17, 24, 39);
-            lblPunto1.Location = new Point(24, 74);
+            lblPunto1.Location = new Point(3, 74);
             lblPunto1.Name = "lblPunto1";
-            lblPunto1.Size = new Size(63, 20);
+            lblPunto1.Size = new Size(64, 20);
             lblPunto1.TabIndex = 1;
             lblPunto1.Text = "Punto 1";
             // 
@@ -266,7 +265,7 @@ namespace GeometriaComputacional
             lblParametros.ForeColor = Color.FromArgb(17, 24, 39);
             lblParametros.Location = new Point(20, 18);
             lblParametros.Name = "lblParametros";
-            lblParametros.Size = new Size(111, 25);
+            lblParametros.Size = new Size(114, 25);
             lblParametros.TabIndex = 0;
             lblParametros.Text = "Parametros";
             // 
@@ -304,7 +303,7 @@ namespace GeometriaComputacional
             lblResultadoKPasos.ForeColor = Color.FromArgb(17, 24, 39);
             lblResultadoKPasos.Location = new Point(18, 34);
             lblResultadoKPasos.Name = "lblResultadoKPasos";
-            lblResultadoKPasos.Size = new Size(24, 35);
+            lblResultadoKPasos.Size = new Size(25, 35);
             lblResultadoKPasos.TabIndex = 1;
             lblResultadoKPasos.Text = "-";
             // 
@@ -315,7 +314,7 @@ namespace GeometriaComputacional
             lblKPasos.ForeColor = Color.FromArgb(107, 114, 128);
             lblKPasos.Location = new Point(18, 12);
             lblKPasos.Name = "lblKPasos";
-            lblKPasos.Size = new Size(58, 20);
+            lblKPasos.Size = new Size(60, 20);
             lblKPasos.TabIndex = 0;
             lblKPasos.Text = "K pasos";
             // 
@@ -337,7 +336,7 @@ namespace GeometriaComputacional
             lblResultadoPendiente.ForeColor = Color.FromArgb(17, 24, 39);
             lblResultadoPendiente.Location = new Point(18, 34);
             lblResultadoPendiente.Name = "lblResultadoPendiente";
-            lblResultadoPendiente.Size = new Size(24, 35);
+            lblResultadoPendiente.Size = new Size(25, 35);
             lblResultadoPendiente.TabIndex = 1;
             lblResultadoPendiente.Text = "-";
             // 
@@ -370,7 +369,7 @@ namespace GeometriaComputacional
             lblResultadoDeltaY.ForeColor = Color.FromArgb(17, 24, 39);
             lblResultadoDeltaY.Location = new Point(18, 34);
             lblResultadoDeltaY.Name = "lblResultadoDeltaY";
-            lblResultadoDeltaY.Size = new Size(24, 35);
+            lblResultadoDeltaY.Size = new Size(25, 35);
             lblResultadoDeltaY.TabIndex = 1;
             lblResultadoDeltaY.Text = "-";
             // 
@@ -403,7 +402,7 @@ namespace GeometriaComputacional
             lblResultadoDeltaX.ForeColor = Color.FromArgb(17, 24, 39);
             lblResultadoDeltaX.Location = new Point(18, 34);
             lblResultadoDeltaX.Name = "lblResultadoDeltaX";
-            lblResultadoDeltaX.Size = new Size(24, 35);
+            lblResultadoDeltaX.Size = new Size(25, 35);
             lblResultadoDeltaX.TabIndex = 1;
             lblResultadoDeltaX.Text = "-";
             // 
@@ -414,7 +413,7 @@ namespace GeometriaComputacional
             lblDeltaX.ForeColor = Color.FromArgb(107, 114, 128);
             lblDeltaX.Location = new Point(18, 12);
             lblDeltaX.Name = "lblDeltaX";
-            lblDeltaX.Size = new Size(57, 20);
+            lblDeltaX.Size = new Size(58, 20);
             lblDeltaX.TabIndex = 0;
             lblDeltaX.Text = "Delta X";
             // 
@@ -436,7 +435,7 @@ namespace GeometriaComputacional
             lblResumen.ForeColor = Color.FromArgb(17, 24, 39);
             lblResumen.Location = new Point(20, 18);
             lblResumen.Name = "lblResumen";
-            lblResumen.Size = new Size(87, 25);
+            lblResumen.Size = new Size(93, 25);
             lblResumen.TabIndex = 0;
             lblResumen.Text = "Resumen";
             // 
@@ -447,7 +446,7 @@ namespace GeometriaComputacional
             lblPlano.ForeColor = Color.FromArgb(17, 24, 39);
             lblPlano.Location = new Point(34, 322);
             lblPlano.Name = "lblPlano";
-            lblPlano.Size = new Size(156, 25);
+            lblPlano.Size = new Size(160, 25);
             lblPlano.TabIndex = 4;
             lblPlano.Text = "Plano cartesiano";
             // 
@@ -471,7 +470,7 @@ namespace GeometriaComputacional
             lblTabla.ForeColor = Color.FromArgb(17, 24, 39);
             lblTabla.Location = new Point(1242, 322);
             lblTabla.Name = "lblTabla";
-            lblTabla.Size = new Size(111, 25);
+            lblTabla.Size = new Size(178, 25);
             lblTabla.TabIndex = 10;
             lblTabla.Text = "Puntos Bresenham";
             // 
@@ -481,7 +480,6 @@ namespace GeometriaComputacional
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.BorderStyle = BorderStyle.FixedSingle;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colPaso, colXReal, colYReal, colPixel, colError });
             dataGridView1.Location = new Point(1242, 356);
@@ -611,11 +609,11 @@ namespace GeometriaComputacional
             lblZoom.ForeColor = Color.FromArgb(75, 85, 99);
             lblZoom.Location = new Point(410, 322);
             lblZoom.Name = "lblZoom";
-            lblZoom.Size = new Size(82, 20);
+            lblZoom.Size = new Size(89, 20);
             lblZoom.TabIndex = 8;
             lblZoom.Text = "Zoom 100%";
             // 
-            // FrmDDA
+            // FrmBresenham
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;

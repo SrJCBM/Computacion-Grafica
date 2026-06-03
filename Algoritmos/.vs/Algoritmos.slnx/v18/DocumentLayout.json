@@ -1,37 +1,61 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Algoritmos\\",
+  "WorkspaceRootPath": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\jcbla\\desktop\\espe\\sexto semestre\\computacion grafica\\algoritmos\\algoritmos\\frmalgoritmo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|solutionrelative:algoritmos\\frmalgoritmo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\jcbla\\desktop\\espe\\sexto semestre\\computacion grafica\\computacion grafica\\algoritmos\\algoritmos\\relleno\\rellenoscanline\\vista\\frmrellenoscanline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|solutionrelative:algoritmos\\relleno\\rellenoscanline\\vista\\frmrellenoscanline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\jcbla\\desktop\\espe\\sexto semestre\\computacion grafica\\algoritmos\\algoritmos\\lineas\\dda\\vista\\frmdda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|solutionrelative:algoritmos\\lineas\\dda\\vista\\frmdda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\jcbla\\desktop\\espe\\sexto semestre\\computacion grafica\\computacion grafica\\algoritmos\\algoritmos\\relleno\\rellenoporsemilla\\vista\\frmrellenoporsemilla.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|solutionrelative:algoritmos\\relleno\\rellenoporsemilla\\vista\\frmrellenoporsemilla.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Algoritmos\\algoritmos\\lineas\\dda\\vista\\frmdda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\jcbla\\desktop\\espe\\sexto semestre\\computacion grafica\\computacion grafica\\algoritmos\\algoritmos\\relleno\\rellenoporpila\\vista\\frmrellenoporpila.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|solutionrelative:algoritmos\\relleno\\rellenoporpila\\vista\\frmrellenoporpila.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\jcbla\\desktop\\espe\\sexto semestre\\computacion grafica\\computacion grafica\\algoritmos\\algoritmos\\conicas\\parametricocirculo\\vista\\frmparametricocirculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|solutionrelative:algoritmos\\conicas\\parametricocirculo\\vista\\frmparametricocirculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\jcbla\\desktop\\espe\\sexto semestre\\computacion grafica\\computacion grafica\\algoritmos\\algoritmos\\lineas\\bresenham\\vista\\frmbresenham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|solutionrelative:algoritmos\\lineas\\bresenham\\vista\\frmbresenham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\algoritmos\\lineas\\dda\\vista\\frmdda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|solutionrelative:algoritmos\\lineas\\dda\\vista\\frmdda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\jcbla\\desktop\\espe\\sexto semestre\\computacion grafica\\algoritmos\\algoritmos\\frmalgoritmo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\jcbla\\desktop\\espe\\sexto semestre\\computacion grafica\\computacion grafica\\algoritmos\\algoritmos\\lineas\\puntomediolinea\\vista\\frmpuntomediolinea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|solutionrelative:algoritmos\\lineas\\puntomediolinea\\vista\\frmpuntomediolinea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\jcbla\\desktop\\espe\\sexto semestre\\computacion grafica\\computacion grafica\\algoritmos\\algoritmos\\frmalgoritmo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|solutionrelative:algoritmos\\frmalgoritmo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\jcbla\\desktop\\espe\\sexto semestre\\computacion grafica\\computacion grafica\\algoritmos\\algoritmos\\lineas\\dda\\vista\\frmdda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|solutionrelative:algoritmos\\lineas\\dda\\vista\\frmdda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\jcbla\\desktop\\espe\\sexto semestre\\computacion grafica\\computacion grafica\\algoritmos\\algoritmos\\frmalgoritmo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|solutionrelative:algoritmos\\frmalgoritmo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\jcbla\\desktop\\espe\\sexto semestre\\computacion grafica\\algoritmos\\algoritmos\\lineas\\dda\\modelo\\puntogeometrico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\jcbla\\desktop\\espe\\sexto semestre\\computacion grafica\\computacion grafica\\algoritmos\\algoritmos\\lineas\\dda\\modelo\\puntogeometrico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|solutionrelative:algoritmos\\lineas\\dda\\modelo\\puntogeometrico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\jcbla\\desktop\\espe\\sexto semestre\\computacion grafica\\algoritmos\\algoritmos\\lineas\\dda\\vista\\frmdda.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\jcbla\\desktop\\espe\\sexto semestre\\computacion grafica\\computacion grafica\\algoritmos\\algoritmos\\lineas\\dda\\vista\\frmdda.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|solutionrelative:algoritmos\\lineas\\dda\\vista\\frmdda.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\jcbla\\desktop\\espe\\sexto semestre\\computacion grafica\\algoritmos\\algoritmos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\jcbla\\desktop\\espe\\sexto semestre\\computacion grafica\\computacion grafica\\algoritmos\\algoritmos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|solutionrelative:algoritmos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\jcbla\\desktop\\espe\\sexto semestre\\computacion grafica\\algoritmos\\algoritmos\\frmalgoritmo.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|c:\\users\\jcbla\\desktop\\espe\\sexto semestre\\computacion grafica\\computacion grafica\\algoritmos\\algoritmos\\frmalgoritmo.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FB6FAA5-40ED-CCBA-2C76-9EEAF9CA9D5E}|Algoritmos\\Algoritmos.csproj|solutionrelative:algoritmos\\frmalgoritmo.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -42,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,11 +82,95 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FrmParametricoCirculo.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Conicas\\ParametricoCirculo\\Vista\\FrmParametricoCirculo.cs",
+              "RelativeDocumentMoniker": "Algoritmos\\Conicas\\ParametricoCirculo\\Vista\\FrmParametricoCirculo.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Conicas\\ParametricoCirculo\\Vista\\FrmParametricoCirculo.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Algoritmos\\Conicas\\ParametricoCirculo\\Vista\\FrmParametricoCirculo.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T03:15:58.51Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmRellenoPorPila.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Relleno\\RellenoPorPila\\Vista\\FrmRellenoPorPila.cs",
+              "RelativeDocumentMoniker": "Algoritmos\\Relleno\\RellenoPorPila\\Vista\\FrmRellenoPorPila.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Relleno\\RellenoPorPila\\Vista\\FrmRellenoPorPila.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Algoritmos\\Relleno\\RellenoPorPila\\Vista\\FrmRellenoPorPila.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T03:15:01.441Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmRellenoPorSemilla.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Relleno\\RellenoPorSemilla\\Vista\\FrmRellenoPorSemilla.cs",
+              "RelativeDocumentMoniker": "Algoritmos\\Relleno\\RellenoPorSemilla\\Vista\\FrmRellenoPorSemilla.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Relleno\\RellenoPorSemilla\\Vista\\FrmRellenoPorSemilla.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Algoritmos\\Relleno\\RellenoPorSemilla\\Vista\\FrmRellenoPorSemilla.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T03:14:49.844Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "FrmRellenoScanline.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Relleno\\RellenoScanline\\Vista\\FrmRellenoScanline.cs",
+              "RelativeDocumentMoniker": "Algoritmos\\Relleno\\RellenoScanline\\Vista\\FrmRellenoScanline.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Relleno\\RellenoScanline\\Vista\\FrmRellenoScanline.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Algoritmos\\Relleno\\RellenoScanline\\Vista\\FrmRellenoScanline.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T03:14:31.84Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FrmPuntoMedioLinea.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Lineas\\PuntoMedioLinea\\Vista\\FrmPuntoMedioLinea.cs",
+              "RelativeDocumentMoniker": "Algoritmos\\Lineas\\PuntoMedioLinea\\Vista\\FrmPuntoMedioLinea.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Lineas\\PuntoMedioLinea\\Vista\\FrmPuntoMedioLinea.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Algoritmos\\Lineas\\PuntoMedioLinea\\Vista\\FrmPuntoMedioLinea.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T03:15:08.428Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FrmBresenham.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Lineas\\Bresenham\\Vista\\FrmBresenham.cs",
+              "RelativeDocumentMoniker": "Algoritmos\\Lineas\\Bresenham\\Vista\\FrmBresenham.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Lineas\\Bresenham\\Vista\\FrmBresenham.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Algoritmos\\Lineas\\Bresenham\\Vista\\FrmBresenham.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T03:15:49.137Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FrmDDA.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Lineas\\DDA\\Vista\\FrmDDA.cs",
+              "RelativeDocumentMoniker": "Algoritmos\\Lineas\\DDA\\Vista\\FrmDDA.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Lineas\\DDA\\Vista\\FrmDDA.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Algoritmos\\Lineas\\DDA\\Vista\\FrmDDA.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T15:06:21.381Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "FrmAlgoritmo.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Algoritmos\\Algoritmos\\FrmAlgoritmo.cs",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\FrmAlgoritmo.cs",
               "RelativeDocumentMoniker": "Algoritmos\\FrmAlgoritmo.cs",
-              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Algoritmos\\Algoritmos\\FrmAlgoritmo.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\FrmAlgoritmo.cs [Dise\u00F1o]",
               "RelativeToolTip": "Algoritmos\\FrmAlgoritmo.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-02T14:31:47.834Z",
@@ -70,11 +178,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "FrmDDA.cs",
-              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Algoritmos\\Algoritmos\\Lineas\\DDA\\Vista\\FrmDDA.cs",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Lineas\\DDA\\Vista\\FrmDDA.cs",
               "RelativeDocumentMoniker": "Algoritmos\\Lineas\\DDA\\Vista\\FrmDDA.cs",
-              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Algoritmos\\Algoritmos\\Lineas\\DDA\\Vista\\FrmDDA.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Lineas\\DDA\\Vista\\FrmDDA.cs",
               "RelativeToolTip": "Algoritmos\\Lineas\\DDA\\Vista\\FrmDDA.cs",
               "ViewState": "AgIAAHoBAAAAAAAAAAAAwKEBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -83,22 +191,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FrmDDA.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Algoritmos\\Algoritmos\\Lineas\\DDA\\Vista\\FrmDDA.cs",
-              "RelativeDocumentMoniker": "Algoritmos\\Lineas\\DDA\\Vista\\FrmDDA.cs",
-              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Algoritmos\\Algoritmos\\Lineas\\DDA\\Vista\\FrmDDA.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Algoritmos\\Lineas\\DDA\\Vista\\FrmDDA.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T15:06:21.381Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "FrmAlgoritmo.cs",
-              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Algoritmos\\Algoritmos\\FrmAlgoritmo.cs",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\FrmAlgoritmo.cs",
               "RelativeDocumentMoniker": "Algoritmos\\FrmAlgoritmo.cs",
-              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Algoritmos\\Algoritmos\\FrmAlgoritmo.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\FrmAlgoritmo.cs",
               "RelativeToolTip": "Algoritmos\\FrmAlgoritmo.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAiwCwAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -106,11 +203,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "PuntoGeometrico.cs",
-              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Algoritmos\\Algoritmos\\Lineas\\DDA\\Modelo\\PuntoGeometrico.cs",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Lineas\\DDA\\Modelo\\PuntoGeometrico.cs",
               "RelativeDocumentMoniker": "Algoritmos\\Lineas\\DDA\\Modelo\\PuntoGeometrico.cs",
-              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Algoritmos\\Algoritmos\\Lineas\\DDA\\Modelo\\PuntoGeometrico.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Lineas\\DDA\\Modelo\\PuntoGeometrico.cs",
               "RelativeToolTip": "Algoritmos\\Lineas\\DDA\\Modelo\\PuntoGeometrico.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -118,23 +215,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "FrmDDA.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Algoritmos\\Algoritmos\\Lineas\\DDA\\Vista\\FrmDDA.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Lineas\\DDA\\Vista\\FrmDDA.Designer.cs",
               "RelativeDocumentMoniker": "Algoritmos\\Lineas\\DDA\\Vista\\FrmDDA.Designer.cs",
-              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Algoritmos\\Algoritmos\\Lineas\\DDA\\Vista\\FrmDDA.Designer.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Lineas\\DDA\\Vista\\FrmDDA.Designer.cs",
               "RelativeToolTip": "Algoritmos\\Lineas\\DDA\\Vista\\FrmDDA.Designer.cs",
               "ViewState": "AgIAAMgBAAAAAAAAAAAtwN8BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T15:06:57.962Z"
+              "WhenOpened": "2026-05-21T15:06:57.962Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Algoritmos\\Algoritmos\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Program.cs",
               "RelativeDocumentMoniker": "Algoritmos\\Program.cs",
-              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Algoritmos\\Algoritmos\\Program.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\Program.cs",
               "RelativeToolTip": "Algoritmos\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -142,11 +240,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "FrmAlgoritmo.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Algoritmos\\Algoritmos\\FrmAlgoritmo.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\FrmAlgoritmo.Designer.cs",
               "RelativeDocumentMoniker": "Algoritmos\\FrmAlgoritmo.Designer.cs",
-              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Algoritmos\\Algoritmos\\FrmAlgoritmo.Designer.cs",
+              "ToolTip": "C:\\Users\\jcbla\\Desktop\\ESPE\\Sexto Semestre\\Computacion Grafica\\Computacion Grafica\\Algoritmos\\Algoritmos\\FrmAlgoritmo.Designer.cs",
               "RelativeToolTip": "Algoritmos\\FrmAlgoritmo.Designer.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAxwBYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
