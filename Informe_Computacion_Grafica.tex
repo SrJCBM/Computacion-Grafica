@@ -1,0 +1,1564 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  spanish,
+  a4paper,
+  12pt,
+]{article}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\linespread{1.12}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{listings}
+\usepackage{inconsolata}
+\newcommand{\passthrough}[1]{#1}
+\lstdefinestyle{codigo}{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  breakatwhitespace=false,
+  columns=fullflexible,
+  keepspaces=true,
+  showstringspaces=false,
+  frame=single,
+  rulecolor=\color{gray!35},
+  backgroundcolor=\color{gray!6},
+  xleftmargin=0.5em,
+  xrightmargin=0.5em,
+  aboveskip=0.8em,
+  belowskip=0.8em,
+  inputencoding=utf8,
+  extendedchars=true,
+  literate=
+    {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+    {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+    {ñ}{{\~n}}1 {Ñ}{{\~N}}1
+    {°}{{$^\circ$}}1 {≤}{{$\leq$}}1 {≥}{{$\geq$}}1
+    {→}{{$\to$}}1 {←}{{$\leftarrow$}}1
+    {—}{{---}}1 {–}{{--}}1 {−}{{$-$}}1
+    {×}{{$\times$}}1 {≈}{{$\approx$}}1
+    {├}{{|}}1 {└}{{\textbackslash}}1 {│}{{|}}1 {─}{{-}}1
+}
+\lstset{style=codigo}
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\ifLuaTeX
+\usepackage[bidi=basic,shorthands=off]{babel}
+\else
+\usepackage[bidi=default,shorthands=off]{babel}
+\fi
+\ifLuaTeX
+  \usepackage{selnolig} % disable illegal ligatures
+\fi
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\definecolor{negro_suave}{rgb}{.15,.15,.15}
+\hypersetup{
+  pdflang={es},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={blue},
+  pdftitle={Informe Técnico: Algoritmos de Rasterización y Relleno en Computación Gráfica},
+  pdfauthor={Julio Cesar Blacio Machuca},
+  pdfcreator={LaTeX via pandoc}}
+
+% Logos de portada: sube estos archivos a Overleaf con esos nombres.
+\newcommand{\LogoUniversidad}{Logo.png}
+\newcommand{\LogoDepartamento}{DCCO.png}
+\newcommand{\InsertLogo}[2]{%
+  \IfFileExists{#1}{\includegraphics[height=#2]{#1}}{%
+    \fbox{\parbox[c][#2][c]{#2}{\centering\scriptsize Logo}}%
+  }%
+}
+\newcommand{\InsertLogoWidth}[2]{%
+  \IfFileExists{#1}{\includegraphics[width=#2]{#1}}{%
+    \fbox{\parbox[c][1.4cm][c]{#2}{\centering\scriptsize Logo}}%
+  }%
+}
+
+\title{Informe Técnico: Algoritmos de Rasterización y Relleno en Computación Gráfica}
+\author{Julio Cesar Blacio Machuca}
+\date{Junio 2026}
+
+\begin{document}
+
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  % Barras decorativas como en Alter.tex
+  \filldraw[fill=negro_suave, draw=negro_suave]
+    ($(current page.north west)+(2.0cm,-2.7cm)$)
+    rectangle
+    ($(current page.south west)+(2.35cm,2.0cm)$);
+  \filldraw[fill=negro_suave, draw=negro_suave]
+    ($(current page.north west)+(3.2cm,-4.05cm)$)
+    rectangle
+    ($(current page.north east)+(-2.1cm,-3.85cm)$);
+  \filldraw[fill=negro_suave, draw=negro_suave]
+    ($(current page.south west)+(3.2cm,3.3cm)$)
+    rectangle
+    ($(current page.south east)+(-2.1cm,3.5cm)$);
+
+  % Logos. Sube a Overleaf Logo.png y DCCO.png.
+  \node[anchor=north west] at ($(current page.north west)+(3.35cm,-1.95cm)$)
+    {\InsertLogoWidth{\LogoUniversidad}{6.0cm}};
+  \node[anchor=north east] at ($(current page.north east)+(-2.55cm,-1.65cm)$)
+    {\InsertLogo{\LogoDepartamento}{2.6cm}};
+
+  % Texto principal de portada
+  \node[anchor=east] at ($(current page.east)+(-3.0cm,1.4cm)$)
+    {\textbf{\Huge Computación Gráfica}};
+  \node[anchor=east] at ($(current page.east)+(-3.0cm,-0.3cm)$)
+    {\textbf{\LARGE INFORME DEL PROYECTO}};
+  \node[anchor=east] at ($(current page.east)+(-3.0cm,-2.2cm)$)
+    {\Large Autor: Julio Cesar Blacio Machuca};
+  \node[anchor=east] at ($(current page.east)+(-3.0cm,-3.4cm)$)
+    {\Large NRC: 29505};
+  \node[anchor=east] at ($(current page.east)+(-3.0cm,-4.6cm)$)
+    {\Large Fecha: Junio 2026};
+  \node[anchor=east] at ($(current page.south east)+(-2.9cm,4.45cm)$)
+    {\textbf{\Huge ALGORITMOS RÁSTER}};
+
+  % Pie de portada
+  \node[anchor=east] at ($(current page.south east)+(-2.6cm,1.9cm)$)
+    {\textit{{\Large ING. DARIO JAVIER MORALES CAIZA}}};
+  \node[anchor=east] at ($(current page.south east)+(-2.6cm,1.15cm)$)
+    {\textit{{\Large Departamento de Ciencias de la Computación \quad ESPE}}};
+\end{tikzpicture}
+\mbox{}
+\end{titlepage}
+
+{
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\newpage
+
+\section{Resumen}\label{resumen}
+
+El presente informe documenta el diseño, implementación y validación de
+nueve algoritmos clásicos de computación gráfica interactiva,
+desarrollados sobre la plataforma .NET 10.0 en C\# con Windows Forms. El
+sistema está organizado bajo el patrón arquitectónico
+Modelo-Vista-Controlador (MVC) y abarca tres categorías de algoritmos:
+rasterización de líneas rectas (DDA, Bresenham, Punto Medio de Línea),
+generación de circunferencias (Punto Medio de Círculo, Paramétrico,
+Polar) y algoritmos de relleno de regiones (por Semilla/BFS, por
+Pila/DFS, Scanline). Cada algoritmo cuenta con una interfaz gráfica
+interactiva que permite visualización paso a paso, control de parámetros
+en tiempo real y animación con retardo configurable. Se documentan las
+decisiones de diseño de interfaz, el sistema de coordenadas, el manejo
+de excepciones y la complejidad computacional comparativa de cada
+enfoque.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Arquitectura del Sistema y Decisiones de Diseño
+UI/UX}\label{arquitectura-del-sistema-y-decisiones-de-diseuxf1o-uiux}
+
+\subsection{Patrón Arquitectónico
+MVC}\label{patruxf3n-arquitectuxf3nico-mvc}
+
+El sistema implementa el patrón \textbf{Modelo-Vista-Controlador} de
+forma estricta a nivel de directorios y namespaces. Esta separación
+garantiza que la lógica algorítmica sea completamente independiente de
+la capa de presentación, facilitando el mantenimiento y la
+extensibilidad.
+
+\begin{lstlisting}
+GeometriaComputacional/
+├── Lineas/
+│   ├── DDA/
+│   │   ├── Controlador/   DdaController.cs
+│   │   ├── Modelo/        PasoDDA.cs, ResultadoDDA.cs
+│   │   └── Vista/         FrmDDA.cs
+│   ├── Bresenham/         (misma estructura)
+│   └── PuntoMedioLinea/   (misma estructura)
+├── Conicas/
+│   ├── PuntoMedioCirculo/ (misma estructura)
+│   ├── ParametricoCirculo/
+│   └── PolarCirculo/
+└── Relleno/
+    ├── RellenoPorSemilla/
+    ├── RellenoPorPila/
+    └── RellenoScanline/
+\end{lstlisting}
+
+Cada \textbf{Controlador} expone únicamente un método
+\passthrough{\lstinline!Calcular(...)!} que recibe los parámetros
+matemáticos y retorna un objeto \textbf{Resultado} inmutable. La
+\textbf{Vista} consume ese resultado a través de un temporizador o de
+forma directa, sin conocer los detalles algorítmicos.
+
+\subsection{Paleta de Colores con Canal Alfa
+(ARGB)}\label{paleta-de-colores-con-canal-alfa-argb}
+
+Todos los elementos gráficos del sistema utilizan el modelo de color
+\textbf{ARGB} de 32 bits, donde el canal alfa (primeros 8 bits) controla
+la transparencia con valores entre 0 (totalmente transparente) y 255
+(totalmente opaco).
+
+La elección de transparencia parcial responde a una necesidad funcional
+concreta: los \textbf{píxeles rasterizados} deben superponerse
+visualmente sobre la grilla del plano cartesiano y la línea/curva ideal
+sin ocultarla completamente, de modo que el usuario pueda observar
+simultáneamente la aproximación discreta y la figura matemática
+continua.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2295}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2869}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0574}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.4262}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Elemento
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Color ARGB
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Alpha
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Justificación
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Píxeles DDA / Bresenham & \passthrough{\lstinline!(255, 220, 38, 38)!} &
+255 & Rojo sólido, contraste máximo sobre plano blanco \\
+Círculo ideal de referencia &
+\passthrough{\lstinline!(160, 37, 99, 235)!} & 160 & Azul
+semitransparente; visible bajo los píxeles \\
+Píxeles paramétrico & \passthrough{\lstinline!(200, 22, 163, 74)!} & 200
+& Verde con ligera transparencia \\
+Píxeles polar & \passthrough{\lstinline!(200, 147, 51, 234)!} & 200 &
+Morado semitransparente \\
+Relleno BFS (semilla) & \passthrough{\lstinline!(255, 186, 230, 253)!} &
+255 & Azul claro, evoca expansión uniforme \\
+Relleno DFS (pila) & \passthrough{\lstinline!(255, 167, 243, 208)!} &
+255 & Verde claro, evoca profundidad de árbol \\
+Relleno Scanline & \passthrough{\lstinline!(255, 233, 213, 255)!} & 255
+& Lila claro, evoca barrido horizontal \\
+\end{longtable}
+}
+
+\subsection{Suavizado
+Antialiasing}\label{suavizado-antialiasing}
+
+Todos los formularios de líneas y cónicas activan el modo de suavizado
+de alta calidad en el evento \passthrough{\lstinline!Paint!}:
+
+\begin{lstlisting}
+g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+\end{lstlisting}
+
+Esta instrucción indica a GDI+ que aplique \textbf{submuestreo
+multimuestra} al renderizar primitivas vectoriales (líneas, elipses,
+arcos). Sin esta activación, los bordes de las figuras ideales presentan
+el efecto ``escalera'' (\emph{jaggies}), lo que dificulta la comparación
+visual entre la figura matemática continua y los píxeles rasterizados.
+El antialiasing se aplica únicamente a los elementos vectoriales; los
+rectángulos de píxeles rasterizados se dibujan intencionalmente sin
+suavizado para representar fielmente la naturaleza discreta del
+resultado del algoritmo.
+
+\subsection{Orden de Pintado (Z-order de
+Software)}\label{orden-de-pintado-z-order-de-software}
+
+Una decisión crítica de renderizado es el \textbf{orden de pintado} de
+los elementos. GDI+ no gestiona capas; el último elemento dibujado
+aparece al frente. El orden correcto garantiza que los puntos de control
+siempre sean visibles:
+
+\begin{lstlisting}
+1. Píxeles rasterizados      ← fondo (pueden ser tapados)
+2. Línea / curva ideal       ← nivel intermedio
+3. Puntos de control (P1/P2) ← siempre al frente
+\end{lstlisting}
+
+Sin este orden, los cuadrados de píxeles rojos cubrirían los puntos de
+control verdes y naranjas cuando un píxel coincide con la posición de un
+punto de control, haciéndolos inaccesibles para el arrastre con el
+ratón.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Clasificación Taxonómica de
+Algoritmos}\label{clasificaciuxf3n-taxonuxf3mica-de-algoritmos}
+
+\begin{lstlisting}
+Algoritmos de Computación Gráfica Implementados
+│
+├── RASTERIZACIÓN DE PRIMITIVAS LINEALES
+│   ├── DDA (Digital Differential Analyzer)     — Incremental con aritmética real
+│   ├── Bresenham                                — Incremental con aritmética entera
+│   └── Punto Medio de Línea                    — Decisión por evaluación de función implícita
+│
+├── GENERACIÓN DE CIRCUNFERENCIAS
+│   ├── Punto Medio de Círculo                  — Decisión incremental + simetría 8-fold
+│   ├── Paramétrico                              — Muestreo trigonométrico uniforme por ángulo
+│   └── Polar                                    — Conversión de coordenadas polares a cartesianas
+│
+└── RELLENO DE REGIONES CERRADAS
+    ├── Por Semilla (BFS/Cola)                  — Expansión uniforme por capas
+    ├── Por Pila (DFS/Stack)                    — Exploración en profundidad
+    └── Scanline                                 — Relleno por tramos horizontales
+\end{lstlisting}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Algoritmos de Rasterización de
+Líneas}\label{algoritmos-de-rasterizaciuxf3n-de-luxedneas}
+
+\subsection{Algoritmo DDA (Digital Differential
+Analyzer)}\label{algoritmo-dda-digital-differential-analyzer}
+
+\subsubsection{Análisis Matemático}\label{anuxe1lisis-matemuxe1tico}
+
+El DDA convierte una recta continua \(f(x) = mx + b\) en una secuencia
+de píxeles discretos mediante incrementos acumulativos. Dados dos puntos
+\(P_1 = (x_1, y_1)\) y \(P_2 = (x_2, y_2)\):
+
+\[\Delta x = x_2 - x_1 \qquad \Delta y = y_2 - y_1\]
+
+El número de pasos \(k\) determina cuántos píxeles se generan:
+
+\[k = \max(|\Delta x|,\ |\Delta y|)\]
+
+Los incrementos por paso son fracciones racionales:
+
+\[\delta x = \frac{\Delta x}{k} \qquad \delta y = \frac{\Delta y}{k}\]
+
+La secuencia de píxeles se calcula iterativamente:
+
+\[x_{i+1} = x_i + \delta x \qquad y_{i+1} = y_i + \delta y\]
+
+El píxel en la pantalla se obtiene redondeando:
+
+\[P_i = \bigl(\text{round}(x_i),\ \text{round}(y_i)\bigr)\]
+
+\textbf{Propiedad clave:} El incremento mayor siempre es \(\pm 1\),
+garantizando que no haya píxeles saltados y que la recta sea conexa.
+
+\newpage
+
+\subsubsection{Fragmento de Código}\label{fragmento-de-cuxf3digo}
+
+\begin{lstlisting}
+// DdaController.cs — método Calcular
+public ResultadoDDA Calcular(PuntoGeometrico p1, PuntoGeometrico p2)
+{
+    float dx = p2.X - p1.X;
+    float dy = p2.Y - p1.Y;
+
+    // k = número total de píxeles a generar
+    float k = Math.Max(Math.Abs(dx), Math.Abs(dy));
+
+    // Caso degenerado: ambos puntos coinciden
+    if (k == 0)
+        return new ResultadoDDA(0, 0, 0, 1, new List<PasoDDA>
+            { new(0, p1.X, p1.Y, (int)Math.Round(p1.X), (int)Math.Round(p1.Y)) });
+
+    float ix = dx / k;   // incremento fraccional en X
+    float iy = dy / k;   // incremento fraccional en Y
+
+    float x = p1.X, y = p1.Y;
+    var pasos = new List<PasoDDA>();
+
+    for (int i = 0; i <= (int)k; i++)
+    {
+        // Redondeo al píxel más cercano
+        int px = (int)Math.Round(x);
+        int py = (int)Math.Round(y);
+        pasos.Add(new PasoDDA(i, x, y, px, py));
+        x += ix;
+        y += iy;
+    }
+
+    float pendiente = dx == 0 ? float.PositiveInfinity : dy / dx;
+    return new ResultadoDDA(dx, dy, pendiente, (int)k + 1, pasos);
+}
+\end{lstlisting}
+
+\newpage
+
+\subsubsection{Resultado de Prueba}\label{resultado-de-prueba}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Parámetros & Valores \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(P_1\) & \((-12,\ -2)\) \\
+\(P_2\) & \((11,\ -1)\) \\
+\(\Delta x\) & \(23\) \\
+\(\Delta y\) & \(1\) \\
+\(k\) & \(23\) pasos \\
+\(\delta x\) & \(1.000\) \\
+\(\delta y\) & \(0.043\) \\
+Pendiente \(m\) & \(0.04\) \\
+\end{longtable}
+}
+
+Los píxeles generados pasan de \((-12, -2)\) en pasos unitarios en
+\(x\). Dado que \(\delta y \approx 0.043\), la coordenada \(y\) solo
+cambia de \(-2\) a \(-1\) una vez en el paso 12, reflejando fielmente la
+pendiente casi nula de la recta.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Algoritmo de
+Bresenham}\label{algoritmo-de-bresenham}
+
+\subsubsection{Análisis
+Matemático}\label{anuxe1lisis-matemuxe1tico-1}
+
+Bresenham elimina el uso de aritmética de punto flotante al trabajar
+exclusivamente con \textbf{enteros} y una \textbf{variable de decisión}
+\(e\) que acumula el error respecto a la recta ideal.
+
+Para el caso general con \(|\Delta x| \geq |\Delta y|\) (octante 1):
+
+\[e_0 = 2|\Delta y| - |\Delta x|\]
+
+En cada iteración se evalúa \(e_2 = 2e\):
+
+\[\text{Si } e_2 > -|\Delta y|: \quad x \mathrel{+}= s_x, \quad e \mathrel{-}= 2|\Delta y|\]
+\[\text{Si } e_2 < |\Delta x|: \quad y \mathrel{+}= s_y, \quad e \mathrel{+}= 2|\Delta x|\]
+
+Donde \(s_x = \text{signo}(\Delta x)\) y
+\(s_y = \text{signo}(\Delta y)\) son las direcciones de avance. Este
+criterio generalizado cubre todos los octantes sin casos especiales.
+
+\newpage
+
+\subsubsection{Fragmento de Código}\label{fragmento-de-cuxf3digo-1}
+
+\begin{lstlisting}
+// BresenhamController.cs — algoritmo generalizado para todos los octantes
+int x = p1.X, y = p1.Y;
+int dx = Math.Abs(p2.X - p1.X), dy = Math.Abs(p2.Y - p1.Y);
+int sx = p1.X < p2.X ? 1 : -1;   // dirección en X
+int sy = p1.Y < p2.Y ? 1 : -1;   // dirección en Y
+int error = dx - dy;               // variable de decisión inicial
+
+while (true)
+{
+    pasos.Add(new PasoBresenham(indice++, x, y, error));
+
+    if (x == p2.X && y == p2.Y) break;
+
+    int e2 = 2 * error;
+
+    // Decide avance en X
+    if (e2 > -dy) { error -= dy; x += sx; }
+
+    // Decide avance en Y
+    if (e2 < dx)  { error += dx; y += sy; }
+}
+\end{lstlisting}
+
+
+\subsubsection{Resultado de Prueba}\label{resultado-de-prueba-1}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Paso & \(x\) & \(y\) & Error \(e\) & Acción \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0 & 0 & 0 & 3 & Inicio \\
+1 & 1 & 0 & 1 & Avance en X \\
+2 & 2 & 0 & −1 & Avance en X \\
+3 & 2 & 1 & 5 & Avance en X e Y \\
+4 & 3 & 1 & 3 & Avance en X \\
+\end{longtable}
+}
+
+Para la recta de \(P_1=(0,0)\) a \(P_2=(5,3)\): \(\Delta x=5\),
+\(\Delta y=3\), \(e_0=2\). El algoritmo produce 6 píxeles sin ninguna
+operación de punto flotante.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Algoritmo de Punto Medio de
+Línea}\label{algoritmo-de-punto-medio-de-luxednea}
+
+\subsubsection{Análisis
+Matemático}\label{anuxe1lisis-matemuxe1tico-2}
+
+El algoritmo de Punto Medio evalúa la función implícita de la recta
+\(F(x,y) = \Delta y \cdot x - \Delta x \cdot y + c\) en el \textbf{punto
+medio} entre los dos candidatos de píxel para decidir cuál está más
+cerca de la recta ideal.
+
+Parámetros derivados (asumiendo \(|\Delta x| \geq |\Delta y|\),
+\(m \leq 1\)):
+
+\[\Delta_m = \min(|\Delta x|,\ |\Delta y|), \qquad \Delta_M = \max(|\Delta x|,\ |\Delta y|)\]
+
+Variable de decisión inicial:
+
+\[p_0 = 2\Delta_m - \Delta_M\]
+
+Actualización en cada paso:
+
+\[\text{Si } p < 0: \quad p \mathrel{+}= 2\Delta_m \qquad \text{(avance recto)}\]
+\[\text{Si } p \geq 0: \quad p \mathrel{+}= 2(\Delta_m - \Delta_M) \qquad \text{(avance diagonal)}\]
+
+La \textbf{decisión} registrada en la tabla
+(\passthrough{\lstinline!Recto!} o \passthrough{\lstinline!Diagonal!})
+muestra directamente qué candidato de píxel fue elegido en cada
+iteración.
+
+\newpage
+
+\subsubsection{Fragmento de Código}\label{fragmento-de-cuxf3digo-2}
+
+\begin{lstlisting}
+// PuntoMedioLineaController.cs
+int deltaM = Math.Max(Math.Abs(dx), Math.Abs(dy));  // mayor delta
+int deltam = Math.Min(Math.Abs(dx), Math.Abs(dy));  // menor delta
+
+int p = 2 * deltam - deltaM;   // decisión inicial
+
+for (int i = 0; i < deltaM; i++)
+{
+    string decision;
+    if (p < 0)
+    {
+        // El punto medio indica: avanzar recto (solo eje dominante)
+        p += 2 * deltam;
+        decision = "Recto";
+    }
+    else
+    {
+        // El punto medio indica: avanzar diagonal
+        p += 2 * (deltam - deltaM);
+        decision = "Diagonal";
+        avanzarEjeSecundario();
+    }
+    avanzarEjeDominante();
+    pasos.Add(new PasoPuntoMedioLinea(i, xReal, yReal, xPixel, yPixel, decision));
+}
+\end{lstlisting}
+
+\subsubsection{Resultado de Prueba}\label{resultado-de-prueba-2}
+
+Para \(P_1=(0,0)\), \(P_2=(8,3)\): \(\Delta x=8\), \(\Delta y=3\),
+\(p_0 = 2(3)-8 = -2\).
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+Paso & Píxel & \(p\) & Decisión \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0 & \((0,0)\) & −2 & Recto \\
+1 & \((1,0)\) & 4 & Recto \\
+2 & \((2,1)\) & −8 & Diagonal \\
+3 & \((3,1)\) & −2 & Recto \\
+4 & \((4,1)\) & 4 & Recto \\
+5 & \((5,2)\) & −8 & Diagonal \\
+6 & \((6,2)\) & −2 & Recto \\
+7 & \((7,2)\) & 4 & Recto \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Algoritmos de Generación de
+Circunferencias}\label{algoritmos-de-generaciuxf3n-de-circunferencias}
+
+\subsection{Punto Medio de
+Círculo}\label{punto-medio-de-cuxedrculo}
+
+\subsubsection{Análisis
+Matemático}\label{anuxe1lisis-matemuxe1tico-3}
+
+El algoritmo de Punto Medio para circunferencias explota la
+\textbf{simetría de 8 octantes}: calcula los píxeles en el primer
+octante (\(0° \leq \theta \leq 45°\), zona donde \(x \leq y\)) y los
+refleja simétricamente.
+
+La función implícita de la circunferencia es:
+
+\[f(x, y) = x^2 + y^2 - r^2\]
+
+Condición inicial:
+
+\[x_0 = 0, \quad y_0 = r, \quad p_0 = 1 - r\]
+
+Reglas de actualización en cada iteración (\(x \mathrel{+}= 1\)
+siempre):
+
+\[\text{Si } p < 0: \qquad p \mathrel{+}= 2x + 3\]
+
+\[\text{Si } p \geq 0: \qquad y \mathrel{-}= 1, \quad p \mathrel{+}= 2(x - y) + 5\]
+
+\begin{quote}
+\textbf{Nota de implementación crítica:} el decremento
+\(y \mathrel{-}= 1\) se aplica \textbf{antes} de evaluar la fórmula
+\(p + 2(x-y)+5\). El término \((x-y)\) utiliza el valor actualizado de
+\(y\).
+\end{quote}
+
+Los 8 puntos simétricos generados a partir de \((x, y)\) relativo al
+centro \((x_c, y_c)\) son:
+
+\[(\pm x + x_c,\ \pm y + y_c) \qquad (\pm y + x_c,\ \pm x + y_c)\]
+
+\newpage
+
+\subsubsection{Fragmento de Código}\label{fragmento-de-cuxf3digo-3}
+
+\begin{lstlisting}
+// PuntoMedioCirculoController.cs
+int x = 0, y = radio, p = 1 - radio, iter = 0;
+
+while (x <= y)
+{
+    // Obtener los 8 puntos simétricos (con deduplicación por HashSet)
+    var puntos = ObtenerSimetrias(xc, yc, x, y);
+    pasos.Add(new PasoPuntoMedioCirculo(iter, x, y, p,
+        FormatearSimetrias(puntos), puntos));
+
+    // Actualizar variable de decisión
+    if (p < 0)
+    {
+        p += 2 * x + 3;        // avance Este
+    }
+    else
+    {
+        y--;                   // avance Sureste: decrementar y primero
+        p += 2 * (x - y) + 5; // luego evaluar con y ya decrementado
+    }
+    x++;
+    iter++;
+}
+\end{lstlisting}
+
+\subsubsection{Resultado de Prueba}\label{resultado-de-prueba-3}
+
+Para \(x_c=0\), \(y_c=0\), \(r=5\):
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Iter & \(x\) & \(y\) & \(p\) & Decisión \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0 & 0 & 5 & −4 & Este \\
+1 & 1 & 5 & −2 & Este \\
+2 & 2 & 5 & 2 & Sureste \\
+3 & 3 & 4 & −6 & Este \\
+4 & 4 & 4 & 2 & Sureste \\
+\end{longtable}
+}
+
+En la iteración 2, \(p = -2 + 2(2)+3 = 5 \geq 0\), por lo que \(y\) pasa
+de 5 a 4 y \(p = 5 + 2(2-4)+5 = 2\).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Paramétrico de
+Círculo}\label{paramuxe9trico-de-cuxedrculo}
+
+\subsubsection{Análisis
+Matemático}\label{anuxe1lisis-matemuxe1tico-4}
+
+La representación paramétrica expresa cada punto de la circunferencia en
+función del ángulo \(t\):
+
+\[x(t) = x_c + r\cos(t) \qquad y(t) = y_c + r\sin(t)\]
+
+donde \(t \in [0°, 360°)\) se muestrea con paso de \(1°\), dando
+exactamente 360 puntos. El píxel correspondiente se obtiene redondeando
+al entero más cercano:
+
+\[P_t = \bigl(\text{round}(x(t)),\ \text{round}(y(t))\bigr)\]
+
+El \textbf{paso angular de 1°} garantiza cobertura completa sin brechas
+visibles para radios \(r \geq 2\), ya que el arco por grado es
+\(s = \frac{2\pi r}{360} \approx 0.017r\), que para \(r=5\) da
+\(s \approx 0.087 < 1\) px, asegurando que puntos consecutivos sean
+adyacentes o coincidentes.
+
+El total de píxeles únicos es siempre menor que 360 debido al redondeo:
+múltiples ángulos pueden mapearse al mismo píxel, especialmente en los
+ejes y las diagonales.
+
+\subsubsection{Fragmento de Código}\label{fragmento-de-cuxf3digo-4}
+
+\begin{lstlisting}
+// ParametricoCirculoController.cs
+var pasos = new List<PasoParametricoCirculo>();
+var vistos = new HashSet<(int, int)>();
+
+for (int t = 0; t < 360; t++)
+{
+    double rad = t * Math.PI / 180.0;
+    float xR = (float)(xc + radio * Math.Cos(rad));
+    float yR = (float)(yc + radio * Math.Sin(rad));
+
+    // Redondeo al píxel más cercano
+    int px = (int)Math.Round(xR);
+    int py = (int)Math.Round(yR);
+
+    pasos.Add(new PasoParametricoCirculo(t, xR, yR, px, py));
+
+    // Conteo de píxeles únicos (sin duplicados por redondeo)
+    vistos.Add((px, py));
+}
+
+return new ResultadoParametricoCirculo(xc, yc, radio, vistos.Count, pasos);
+\end{lstlisting}
+
+\subsubsection{Resultado de Prueba}\label{resultado-de-prueba-4}
+
+Para \(x_c=0\), \(y_c=0\), \(r=5\):
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+\(t\) (°) & \(x(t)\) real & \(y(t)\) real & Píxel \((p_x, p_y)\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0 & 5.000 & 0.000 & \((5, 0)\) \\
+30 & 4.330 & 2.500 & \((4, 3)\) \\
+45 & 3.536 & 3.536 & \((4, 4)\) \\
+90 & 0.000 & 5.000 & \((0, 5)\) \\
+180 & −5.000 & 0.000 & \((−5, 0)\) \\
+270 & 0.000 & −5.000 & \((0, −5)\) \\
+\end{longtable}
+}
+
+Total de 360 ángulos muestreados → \textbf{31 píxeles únicos} (para
+\(r=5\)), evidenciando la redundancia por redondeo.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Polar de Círculo}\label{polar-de-cuxedrculo}
+
+\subsubsection{Análisis
+Matemático}\label{anuxe1lisis-matemuxe1tico-5}
+
+El método polar parte de las coordenadas polares \((r, \theta)\), donde
+el \textbf{radio \(r\) es constante} y el ángulo \(\theta\) varía. La
+conversión al plano cartesiano se realiza mediante:
+
+\[x = x_c + r\cos(\theta) \qquad y = y_c + r\sin(\theta)\]
+
+La diferencia conceptual respecto al paramétrico es que en el método
+polar el punto de partida es la \textbf{definición geométrica de radio
+constante} en coordenadas polares, enfatizando que todos los puntos de
+la circunferencia están a la misma distancia \(r\) del centro, mientras
+que el método paramétrico enfatiza el recorrido angular.
+
+Matemáticamente, ambos producen la misma secuencia de píxeles para el
+mismo \((x_c, y_c, r)\).
+
+\newpage
+
+\subsubsection{Fragmento de Código}\label{fragmento-de-cuxf3digo-5}
+
+\begin{lstlisting}
+// PolarCirculoController.cs
+for (int theta = 0; theta < 360; theta++)
+{
+    double rad = theta * Math.PI / 180.0;
+
+    // Conversión polar → cartesiano con centro trasladado
+    int px = (int)Math.Round(xc + radio * Math.Cos(rad));
+    int py = (int)Math.Round(yc + radio * Math.Sin(rad));
+
+    // Se registra: PixelX, R constante, Theta, punto formateado
+    pasos.Add(new PasoPolarCirculo(theta, radio, px, py));
+    vistos.Add((px, py));
+}
+\end{lstlisting}
+
+\subsubsection{Resultado de Prueba}\label{resultado-de-prueba-5}
+
+Para \(x_c=0\), \(y_c=0\), \(r=5\):
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+\(\theta\) (°) & \(r\) & \((p_x, p_y)\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0 & 5 & \((5, 0)\) \\
+60 & 5 & \((3, 4)\) \\
+120 & 5 & \((−3, 4)\) \\
+180 & 5 & \((−5, 0)\) \\
+240 & 5 & \((−3, −4)\) \\
+300 & 5 & \((3, −4)\) \\
+\end{longtable}
+}
+
+El radio \(r=5\) aparece como valor constante en todas las filas de la
+tabla, ilustrando la naturaleza polar del algoritmo.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Algoritmos de Relleno de
+Regiones}\label{algoritmos-de-relleno-de-regiones}
+
+Los algoritmos de relleno operan sobre una \textbf{matriz de bytes} de
+\(23 \times 15\) celdas. Cada celda tiene uno de tres estados:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Valor & Estado & Color visualizado \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\passthrough{\lstinline!0!} & Vacía & Blanco \\
+\passthrough{\lstinline!1!} & Borde & Gris oscuro \\
+\passthrough{\lstinline!2!} & Rellena & Color del algoritmo \\
+\end{longtable}
+}
+
+La \textbf{semilla} \((s_x, s_y)\) debe ubicarse en una celda vacía
+dentro de la figura cerrada. El sistema incluye una \textbf{validación
+previa} basada en BFS que verifica si la semilla puede alcanzar el borde
+de la matriz; en caso afirmativo, la semilla está fuera de la figura y
+el relleno se rechaza.
+
+\subsection{Relleno por Semilla
+(BFS)}\label{relleno-por-semilla-bfs}
+
+\subsubsection{Análisis
+Matemático}\label{anuxe1lisis-matemuxe1tico-6}
+
+El algoritmo de Relleno por Semilla utiliza una \textbf{cola FIFO}
+(First In, First Out), implementando una búsqueda en anchura (BFS ---
+\emph{Breadth-First Search}). La expansión se produce en capas
+concéntricas a partir de la semilla, análoga a las ondas de un punto en
+un estanque.
+
+El orden de procesamiento de vecinos es:
+
+\[\text{Arriba} \to \text{Derecha} \to \text{Abajo} \to \text{Izquierda}\]
+
+\[\{(x, y-1),\ (x+1, y),\ (x, y+1),\ (x-1, y)\}\]
+
+Este orden, combinado con la disciplina FIFO de la cola, produce una
+expansión visual uniforme: todas las celdas a distancia Manhattan \(d\)
+de la semilla se pintan antes que cualquier celda a distancia \(d+1\).
+
+La \textbf{complejidad temporal} es \(O(n)\) donde \(n\) es el número de
+celdas interiores, ya que cada celda se encola y desencola exactamente
+una vez.
+
+\newpage
+
+\subsubsection{Fragmento de Código}\label{fragmento-de-cuxf3digo-6}
+
+\begin{lstlisting}
+// RellenoPorSemillaController.cs — BFS con validación previa
+public ResultadoRelleno Calcular(byte[,] matriz, int semX, int semY)
+{
+    // Validación 1: la semilla no debe estar en un borde
+    // Validación 2: la semilla debe estar dentro de la figura cerrada
+    if (matriz[semY, semX] != VACIA || !EsDentroDelaFigura(matriz, semX, semY))
+        return new ResultadoRelleno(semX, semY, new List<PasoRelleno>());
+
+    var cola = new Queue<(int X, int Y)>();
+    var enCola = new bool[ROWS, COLS];
+    cola.Enqueue((semX, semY));
+    enCola[semY, semX] = true;
+    int orden = 1;
+
+    while (cola.Count > 0)
+    {
+        var (x, y) = cola.Dequeue();
+        if (matriz[y, x] != VACIA) continue;
+
+        matriz[y, x] = 2;  // marcar como rellena
+        pasos.Add(new PasoRelleno(x, y, orden++));
+
+        // Encolar vecinos en orden BFS: Arriba, Derecha, Abajo, Izquierda
+        foreach (var (nx, ny) in new[] { (x, y-1), (x+1, y), (x, y+1), (x-1, y) })
+        {
+            if (nx >= 0 && nx < COLS && ny >= 0 && ny < ROWS
+                && matriz[ny, nx] == VACIA && !enCola[ny, nx])
+            {
+                enCola[ny, nx] = true;
+                cola.Enqueue((nx, ny));
+            }
+        }
+    }
+    return new ResultadoRelleno(semX, semY, pasos);
+}
+\end{lstlisting}
+
+\newpage
+
+\subsubsection{Resultado de Prueba}\label{resultado-de-prueba-6}
+
+\textbf{Figura:} Cuadrado (borde en columnas 4--18, filas 2--12).
+\textbf{Semilla:} \((11, 7)\).
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Orden & Celda & Descripción \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & \((11, 7)\) & Semilla inicial \\
+2 & \((11, 6)\) & Arriba de la semilla \\
+3 & \((12, 7)\) & Derecha de la semilla \\
+4 & \((11, 8)\) & Abajo de la semilla \\
+5 & \((10, 7)\) & Izquierda de la semilla \\
+\end{longtable}
+}
+
+La animación con delay de 200ms evidencia el patrón de expansión
+concéntrica. Total de celdas rellenas: \(15 \times 11 = 165\) (interior
+del cuadrado).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Relleno por Pila (DFS)}\label{relleno-por-pila-dfs}
+
+\subsubsection{Análisis
+Matemático}\label{anuxe1lisis-matemuxe1tico-7}
+
+El Relleno por Pila utiliza una \textbf{pila LIFO} (Last In, First Out),
+implementando una búsqueda en profundidad (DFS --- \emph{Depth-First
+Search}). A diferencia del BFS, el algoritmo explora un camino hasta su
+máxima profundidad antes de retroceder.
+
+Los vecinos se \textbf{empujan} a la pila en el orden:
+
+\[\text{Arriba},\ \text{Derecha},\ \text{Abajo},\ \text{Izquierda}\]
+
+Pero debido a la disciplina LIFO, se \textbf{procesan} en orden inverso:
+
+\[\text{Izquierda} \to \text{Abajo} \to \text{Derecha} \to \text{Arriba}\]
+
+Esto produce un patrón visual característico: el relleno ``se mete'' por
+una dirección y avanza lo más lejos posible antes de volver a explorar
+otras direcciones, generando un patrón de expansión no uniforme que
+visualmente recuerda al recorrido de un laberinto.
+
+\newpage
+
+\subsubsection{Fragmento de Código}\label{fragmento-de-cuxf3digo-7}
+
+\begin{lstlisting}
+// RellenoPorPilaController.cs — DFS con pila explícita
+if (matriz[semY, semX] != VACIA || !EsDentroDelaFigura(matriz, semX, semY))
+    return new ResultadoRelleno(semX, semY, new List<PasoRelleno>());
+
+var pila = new Stack<(int X, int Y)>();
+var visitado = new bool[ROWS, COLS];
+pila.Push((semX, semY));
+
+while (pila.Count > 0)
+{
+    var (x, y) = pila.Pop();
+
+    if (x < 0 || x >= COLS || y < 0 || y >= ROWS) continue;
+    if (matriz[y, x] != VACIA || visitado[y, x]) continue;
+
+    visitado[y, x] = true;
+    matriz[y, x] = 2;
+    pasos.Add(new PasoRelleno(x, y, orden++));
+
+    // Push en orden: Arriba, Derecha, Abajo, Izquierda
+    // LIFO → saldrá Izquierda primero
+    pila.Push((x,   y-1));  // Arriba    (sale último)
+    pila.Push((x+1, y  ));  // Derecha
+    pila.Push((x,   y+1));  // Abajo
+    pila.Push((x-1, y  ));  // Izquierda (sale primero)
+}
+\end{lstlisting}
+
+\subsubsection{Resultado de Prueba}\label{resultado-de-prueba-7}
+
+\textbf{Figura:} Triángulo con vértices \((11,2)\), \((4,12)\),
+\((18,12)\). \textbf{Semilla:} \((11, 7)\).
+
+Los primeros pasos evidencian el comportamiento DFS: desde la semilla
+\((11,7)\), el primer vecino procesado es Izquierda \((10,7)\). Desde
+\((10,7)\) vuelve a tomar Izquierda, produciendo el recorrido:
+
+\[S=(11,7) \to (10,7) \to (9,7) \to (8,7) \to \ldots\]
+
+hasta alcanzar el borde izquierdo del triángulo, y solo entonces regresa
+para explorar otras direcciones.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Relleno Scanline}\label{relleno-scanline}
+
+\subsubsection{Análisis
+Matemático}\label{anuxe1lisis-matemuxe1tico-8}
+
+El algoritmo Scanline optimiza el relleno al operar sobre \textbf{tramos
+horizontales completos} en lugar de celdas individuales. Para cada
+semilla \((s_x, s_y)\) extraída de la cola:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Búsqueda de límites:} escaneado lateral para encontrar
+  \(x_{izq}\) y \(x_{der}\):
+\end{enumerate}
+
+\[x_{izq} = \min\{x \leq s_x : \text{matriz}[s_y][x] \neq \text{VACIA}\} + 1\]
+\[x_{der} = \max\{x \geq s_x : \text{matriz}[s_y][x] \neq \text{VACIA}\} - 1\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  \textbf{Relleno del tramo:} se pintan todas las celdas en
+  \([x_{izq},\ x_{der}]\) de la fila \(s_y\).
+\item
+  \textbf{Propagación:} para cada celda pintada \((x, s_y)\), si la
+  celda superior \((x, s_y-1)\) o inferior \((x, s_y+1)\) está vacía y
+  aún no fue encolada, se agrega como nueva semilla.
+\end{enumerate}
+
+Este enfoque reduce el número de operaciones de encolado: en vez de
+encolar cada celda individualmente, se encolan \textbf{puntos semilla de
+fila} (uno por transición vertical), logrando un relleno mucho más
+eficiente para figuras amplias.
+
+\newpage
+
+\subsubsection{Fragmento de Código}\label{fragmento-de-cuxf3digo-8}
+
+\begin{lstlisting}
+// RellenoScanlineController.cs — relleno por tramos horizontales
+cola.Enqueue((semX, semY));
+agregado[semY, semX] = true;
+
+while (cola.Count > 0)
+{
+    var (sx, sy) = cola.Dequeue();
+    if (matriz[sy, sx] != VACIA) continue;
+
+    // Buscar límite izquierdo del tramo
+    int xIzq = sx;
+    while (xIzq > 0 && matriz[sy, xIzq - 1] == VACIA) xIzq--;
+
+    // Buscar límite derecho del tramo
+    int xDer = sx;
+    while (xDer < COLS - 1 && matriz[sy, xDer + 1] == VACIA) xDer++;
+
+    // Pintar el tramo completo y propagar semillas verticales
+    for (int x = xIzq; x <= xDer; x++)
+    {
+        if (matriz[sy, x] != VACIA) continue;
+        matriz[sy, x] = 2;
+        pasos.Add(new PasoRelleno(x, sy, orden++));
+
+        // Semilla superior
+        if (sy > 0 && matriz[sy-1, x] == VACIA && !agregado[sy-1, x])
+        { agregado[sy-1, x] = true; cola.Enqueue((x, sy-1)); }
+
+        // Semilla inferior
+        if (sy < ROWS-1 && matriz[sy+1, x] == VACIA && !agregado[sy+1, x])
+        { agregado[sy+1, x] = true; cola.Enqueue((x, sy+1)); }
+    }
+}
+\end{lstlisting}
+
+\subsubsection{Resultado de Prueba}\label{resultado-de-prueba-8}
+
+\textbf{Figura:} Pentágono centrado en \((11, 7)\) con radio \(5.5\)
+celdas.
+
+El algoritmo procesa la fila central primero (la que contiene la
+semilla), rellena un tramo de \textasciitilde10 celdas en una sola
+iteración de cola, y encola semillas para las filas \(6\) y \(8\). El
+número de operaciones de encolado es proporcional al \textbf{número de
+filas} de la figura (\textasciitilde9), no al número de celdas
+(\textasciitilde70), lo que explica su ventaja en eficiencia para
+figuras de gran ancho horizontal.
+
+
+\section{Sistema de Coordenadas e Inversión del Eje
+Y}\label{sistema-de-coordenadas-e-inversiuxf3n-del-eje-y}
+
+Las API gráficas de sistemas operativos tradicionales (GDI+, DirectX 2D,
+HTML Canvas) ubican el \textbf{origen \((0, 0)\) en la esquina superior
+izquierda} de la ventana o panel, con el eje X creciendo hacia la
+derecha y el \textbf{eje Y creciendo hacia abajo}. Esta convención es
+opuesta a las coordenadas matemáticas estándar, donde el eje Y crece
+hacia arriba.
+
+Si se grafican directamente las coordenadas matemáticas sin
+transformación, una línea con pendiente positiva (\(m > 0\)) aparecería
+inclinada \textbf{hacia abajo} en la pantalla, y un círculo se vería
+correcto en forma pero con el eje Y invertido respecto a las etiquetas.
+
+Para corregir esto, el sistema aplica la siguiente transformación al
+convertir coordenadas cartesianas \((x_c, y_c)\) a coordenadas de
+pantalla \((p_x, p_y)\):
+
+\[p_x = O_x + x_c \cdot e \qquad p_y = O_y - y_c \cdot e\]
+
+Donde:
+
+\begin{itemize}
+\tightlist
+\item \((O_x, O_y)\) es el \textbf{origen del plano} en píxeles de pantalla (centro del panel con desplazamiento por pan).
+\item \(e\) es el \textbf{factor de escala} en píxeles por unidad matemática.
+\end{itemize}
+
+La inversión del signo en \(p_y\) (\(O_y - y_c \cdot e\)) corrige la
+orientación del eje Y. Esta transformación está implementada en el
+método \passthrough{\lstinline!CartesianoAPantalla!} de cada formulario:
+
+\begin{lstlisting}
+private PointF CartesianoAPantalla(float x, float y)
+{
+    PointF origen = ObtenerOrigen();
+    return new PointF(
+        origen.X + x * escala,   // X: dirección normal
+        origen.Y - y * escala    // Y: invertido (GDI+ crece hacia abajo)
+    );
+}
+\end{lstlisting}
+
+La operación inversa, para convertir un clic del ratón en coordenadas
+cartesianas, aplica la transformación opuesta:
+
+\begin{lstlisting}
+private PointF PantallaACartesiano(Point p)
+{
+    PointF origen = ObtenerOrigen();
+    return new PointF(
+        (p.X - origen.X) / escala,    // X normal
+        (origen.Y - p.Y) / escala     // Y invertido
+    );
+}
+\end{lstlisting}
+
+El factor de escala inicial es de \(24\ \text{px/unidad}\), ajustable
+mediante zoom desde \(10\) hasta \(72\ \text{px/unidad}\). El origen se
+desplaza mediante clic-arrastre con el botón derecho, actualizando
+\passthrough{\lstinline!desplazamientoPlano!} para implementar la
+función de paneo.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Documentación de Control de
+Excepciones}\label{documentaciuxf3n-de-control-de-excepciones}
+
+\subsection{Sanitización de Entradas
+Numéricas}\label{sanitizaciuxf3n-de-entradas-numuxe9ricas}
+
+Todos los campos de texto de coordenadas numéricos son procesados
+mediante el método \passthrough{\lstinline!TryParse!} personalizado, que
+intenta la conversión con dos culturas distintas para tolerar tanto la
+coma decimal europea como el punto decimal anglosajón:
+
+\begin{lstlisting}
+private static bool TryParse(string texto, out float valor)
+{
+    // Intento 1: cultura del sistema operativo (ej. "3,14" en español)
+    if (float.TryParse(texto, NumberStyles.Float,
+        CultureInfo.CurrentCulture, out valor)) return true;
+
+    // Intento 2: cultura invariante (ej. "3.14" en inglés)
+    if (float.TryParse(texto, NumberStyles.Float,
+        CultureInfo.InvariantCulture, out valor)) return true;
+
+    valor = 0; return false;  // entrada inválida
+}
+\end{lstlisting}
+
+Si cualquier campo falla la conversión, el sistema \textbf{no lanza una
+excepción}, sino que retorna \passthrough{\lstinline!false!} y muestra
+un \passthrough{\lstinline!MessageBox!} informativo, manteniendo el
+estado previo de la aplicación intacto.
+
+\subsection{Validación de Radio
+Positivo}\label{validaciuxf3n-de-radio-positivo}
+
+Para los algoritmos de cónicas, el radio debe ser estrictamente positivo
+(\(r > 0\)). La validación se realiza en
+\passthrough{\lstinline!LeerDatosDesdeTexto!}:
+
+\begin{lstlisting}
+private bool LeerDatosDesdeTexto()
+{
+    if (!TryParseInt(txtX1.Text, out int xc) ||
+        !TryParseInt(txtY1.Text, out int yc) ||
+        !TryParseInt(txtX2.Text, out int r)  ||
+        r <= 0)               // radio debe ser > 0
+        return false;
+    // ...
+}
+\end{lstlisting}
+
+Un radio de cero o negativo haría el algoritmo de Punto Medio
+infinitamente iterativo (condición de parada \(x \leq y\) nunca se
+cumpliría) y el algoritmo paramétrico generaría únicamente el punto
+central.
+
+\subsection{Validación de Semilla Dentro de la
+Figura}\label{validaciuxf3n-de-semilla-dentro-de-la-figura}
+
+La validación más sofisticada del sistema es la verificación de que la
+semilla de relleno está \textbf{dentro} de la región cerrada y no en el
+exterior. Se implementa como un BFS de pre-validación que busca un
+camino libre de bordes hacia el límite de la matriz:
+
+\begin{lstlisting}
+private static bool EsDentroDelaFigura(byte[,] matriz, int semX, int semY)
+{
+    var visitado = new bool[ROWS, COLS];
+    var cola = new Queue<(int X, int Y)>();
+    cola.Enqueue((semX, semY));
+    visitado[semY, semX] = true;
+
+    while (cola.Count > 0)
+    {
+        var (x, y) = cola.Dequeue();
+
+        // Si alcanza el borde de la matriz → semilla está fuera de la figura
+        if (x == 0 || x == COLS-1 || y == 0 || y == ROWS-1)
+            return false;
+
+        foreach (var (nx, ny) in new[] { (x, y-1), (x+1,y), (x,y+1), (x-1,y) })
+        {
+            if (nx >= 0 && nx < COLS && ny >= 0 && ny < ROWS
+                && matriz[ny, nx] == VACIA && !visitado[ny, nx])
+            {
+                visitado[ny, nx] = true;
+                cola.Enqueue((nx, ny));
+            }
+        }
+    }
+    return true;  // la región explorada nunca alcanzó el borde → es interior
+}
+\end{lstlisting}
+
+Esta validación tiene la misma complejidad \(O(n)\) que el relleno en
+sí, pero se ejecuta sobre una copia de la matriz, dejando el estado
+original intacto si la semilla es inválida.
+\newpage
+
+\subsection{Guardias de Nulidad en el Timer de
+Animación}\label{guardias-de-nulidad-en-el-timer-de-animaciuxf3n}
+
+El timer de animación verifica en cada tick que el estado del sistema
+sea consistente antes de intentar acceder a datos:
+
+\begin{lstlisting}
+private void Timer_Tick(object? sender, EventArgs e)
+{
+    // Triple guardia: resultado, matriz y límite de pasos
+    if (resultado == null || matriz == null || pasoActual >= resultado.Pasos.Count)
+    {
+        timer1.Stop();
+        ActualizarEstado($"Relleno completo. Celdas pintadas: {resultado?.TotalCeldas}");
+        return;
+    }
+    // Procesamiento seguro garantizado
+    var paso = resultado.Pasos[pasoActual];
+    if (paso.Y < ROWS && paso.X < COLS)
+        matriz[paso.Y, paso.X] = 2;
+    pasoActual++;
+    pnlContenedor.Refresh();  // repintado síncrono para animación precisa
+}
+\end{lstlisting}
+
+El uso de \passthrough{\lstinline!Refresh()!} en lugar de
+\passthrough{\lstinline!Invalidate()!} garantiza que cada tick del timer
+resulte en exactamente un frame visible, evitando que múltiples
+invalidaciones se acumulen y produzcan saltos en la animación.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Conclusiones Técnicas y Análisis de
+Complejidad}\label{conclusiones-tuxe9cnicas-y-anuxe1lisis-de-complejidad}
+
+\subsection{Tabla Resumen de
+Algoritmos}\label{tabla-resumen-de-algoritmos}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2051}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1453}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1795}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2650}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2051}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Algoritmo
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Categoría
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Estructura de datos
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Técnica matemática
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+API principal
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+DDA & Línea & Lista & Incremento fraccionario &
+\passthrough{\lstinline!FillRectangle!} \\
+Bresenham & Línea & Lista & Aritmética entera + error &
+\passthrough{\lstinline!FillRectangle!} \\
+Punto Medio Línea & Línea & Lista & Función implícita + decisión &
+\passthrough{\lstinline!FillRectangle!} \\
+Punto Medio Círculo & Cónica & Lista & Decisión incremental 8-fold &
+\passthrough{\lstinline!FillRectangle!} \\
+Paramétrico Círculo & Cónica & Lista + HashSet & Muestreo trigonométrico
+& \passthrough{\lstinline!FillRectangle!} \\
+Polar Círculo & Cónica & Lista + HashSet & Coordenadas polares &
+\passthrough{\lstinline!FillRectangle!} \\
+Relleno Semilla (BFS) & Relleno & Queue & Búsqueda en anchura &
+\passthrough{\lstinline!FillRectangle!} \\
+Relleno Pila (DFS) & Relleno & Stack & Búsqueda en profundidad &
+\passthrough{\lstinline!FillRectangle!} \\
+Scanline & Relleno & Queue & Tramos horizontales &
+\passthrough{\lstinline!FillRectangle!} \\
+\end{longtable}
+}
+
+\subsection{Análisis Comparativo de
+Eficiencia}\label{anuxe1lisis-comparativo-de-eficiencia}
+
+\subsubsection{Algoritmos de Líneas}\label{algoritmos-de-luxedneas}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2338}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3766}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2208}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1688}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Algoritmo
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Operaciones por píxel
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Tipo aritmético
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Complejidad
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+DDA & 2 sumas, 2 redondeos & Punto flotante & \(O(k)\) \\
+Bresenham & 2 sumas, 1 comparación & Entera & \(O(k)\) \\
+Punto Medio & 1 suma, 1 comparación & Entera & \(O(k)\) \\
+\end{longtable}
+}
+
+Donde \(k = \max(|\Delta x|, |\Delta y|)\). Aunque la complejidad
+asintótica es equivalente, \textbf{Bresenham y Punto Medio son
+significativamente más rápidos} en hardware que no cuenta con unidad de
+punto flotante, dado que eliminan operaciones de redondeo y divisiones
+en coma flotante. En hardware moderno con FPU, la diferencia es marginal
+pero sigue siendo relevante en contextos de renderizado masivo.
+
+\subsubsection{Algoritmos de
+Circunferencia}\label{algoritmos-de-circunferencia}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2118}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2471}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3412}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Algoritmo
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Iteraciones totales
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Tipo aritmético
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Operaciones trigonométricas
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Punto Medio & \(\leq r/\sqrt{2}\) & Entera & Ninguna \\
+Paramétrico & 360 & Punto flotante & 2 por iteración (cos, sin) \\
+Polar & 360 & Punto flotante & 2 por iteración (cos, sin) \\
+\end{longtable}
+}
+
+El \textbf{Punto Medio de Círculo} es el más eficiente: genera entre
+\(\lfloor r/\sqrt{2}\rfloor + 1\) iteraciones (el primer octante), con
+8-fold symmetry, totalizando \(O(r)\) operaciones enteras sin ninguna
+función trigonométrica. El paramétrico y el polar son \(O(360)\)
+independientemente del radio e involucran funciones transcendentes
+costosas.
+
+\subsubsection{Algoritmos de Relleno}\label{algoritmos-de-relleno}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2024}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2857}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2619}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Algoritmo
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Celdas encoladas
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Patrón visual
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Eficiencia relativa
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+BFS (Semilla) & \(O(n)\) --- cada celda 1x & Uniforme concéntrico &
+Base \\
+DFS (Pila) & \(O(n)\) --- puede repetir & Profundidad variable & Similar
+a BFS \\
+Scanline & \(O(\text{filas})\) & Por filas & Mayor para figuras
+amplias \\
+\end{longtable}
+}
+
+El \textbf{Scanline} presenta la mejor eficiencia práctica para figuras
+de geometría regular porque el número de semillas encoladas es
+proporcional al número de \textbf{filas} de la figura, no al número de
+celdas individuales. Para una figura de \(w\) columnas y \(h\) filas, el
+Scanline encola \(O(h)\) semillas mientras BFS/DFS encolan hasta
+\(O(w \times h)\) celdas, una mejora de un factor \(w\) en las
+operaciones de gestión de la estructura de datos.
+
+\subsection{\texorpdfstring{Decisión de API Gráfica:
+\texttt{FillRectangle}
+vs.~\texttt{DrawEllipse}}{8.3. Decisión de API Gráfica: FillRectangle vs.~DrawEllipse}}\label{decisiuxf3n-de-api-gruxe1fica-fillrectangle-vs.-drawellipse}
+
+Todos los píxeles rasterizados se dibujan mediante
+\passthrough{\lstinline!FillRectangle!} con un tamaño igual al factor de
+escala, en vez de usar primitivas de alto nivel como
+\passthrough{\lstinline!FillEllipse!} o
+\passthrough{\lstinline!FillPolygon!}. Esta decisión tiene base en la
+\textbf{semántica del algoritmo}: el objetivo es visualizar cada píxel
+discreto como una celda cuadrada de la grilla, representando fielmente
+el espacio de píxeles de un monitor real. Usar
+\passthrough{\lstinline!FillEllipse!} o
+\passthrough{\lstinline!FillPolygon!} para representar píxeles sería
+semánticamente incorrecto, aunque visualmente más estético.
+
+La figura \textbf{ideal} (la línea o circunferencia matemática continua)
+sí utiliza las primitivas de alto nivel de GDI+
+(\passthrough{\lstinline!DrawLine!},
+\passthrough{\lstinline!DrawEllipse!}), que internamente aplican
+antialiasing a nivel de subpíxel, creando la separación visual entre la
+\emph{referencia matemática continua} y la \emph{aproximación discreta
+rasterizada}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Repositorio}\label{repositorio}
+
+El código fuente completo del proyecto, incluyendo el historial de
+versiones, la estructura MVC completa y todos los algoritmos
+documentados en este informe, está disponible en el repositorio de
+GitHub del autor:
+
+\textbf{Repositorio:}
+\href{https://github.com}{github.com/{[}usuario{]}/Computacion-Grafica}
+
+El repositorio contiene:
+
+\begin{itemize}
+\tightlist
+\item Proyecto C\# SDK-style compilable con Visual Studio 2022 y .NET 10.0.
+\item Estructura de carpetas MVC por algoritmo.
+\item Historial de commits que refleja el desarrollo incremental.
+\item Todos los formularios con interfaz interactiva paso a paso.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+
+
+\end{document}

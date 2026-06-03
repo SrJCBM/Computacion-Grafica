@@ -8,9 +8,9 @@
 ### Departamento de Ciencias de la Computación (DCCO)
 
 **Materia:** Computación Gráfica  
-**NRC:** [NRC]  
-**Docente:** [Nombre del Docente]  
-**Autor:** Kenned Jhair Sigcha Palma  
+**NRC:** 29505  
+**Docente:** Dario Javier Morales Caiza
+**Autor:** Julio Cesar Blacio Machuca
 **Período:** 2025 — 2026  
 **Fecha de entrega:** Junio 2026  
 
